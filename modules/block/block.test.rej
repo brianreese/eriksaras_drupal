@@ -1,0 +1,21 @@
+***************
+*** 78,83 ****
+      // Check to see if the custom block was created by checking that it's in the database..
+      $this->assertNotNull($bid, t('Custom block found in database'));
+  
+      // Check if the block can be moved to all availble regions.
+      $custom_block['module'] = 'block';
+      $custom_block['delta'] = $bid;
+--- 78,89 ----
+      // Check to see if the custom block was created by checking that it's in the database..
+      $this->assertNotNull($bid, t('Custom block found in database'));
+  
++     // Check that block_block_view gives the correct title and content.
++     $data = block_block_view($bid);
++     $format = db_query("SELECT format FROM {block_custom} WHERE bid = :bid", array(':bid' => $bid))->fetchField();
++     $this->assertEqual($custom_block['title'], $data['subject'], t('hook_block_view provides correct block title.'));
++     $this->assertEqual(check_markup($custom_block['body[value]'], $format), $data['content']['#markup'], t('hook_block_view provides correct block content.'));
++ 
+      // Check if the block can be moved to all availble regions.
+      $custom_block['module'] = 'block';
+      $custom_block['delta'] = $bid;

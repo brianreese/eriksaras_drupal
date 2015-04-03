@@ -1,0 +1,13 @@
+; $Id$
+name = Reese Creative Panels
+description = Provides the content for the theme rcpanels.
+core = 7.x
+package = Reese Creative Studio
+
+;dependencies[] = images
+;dependencies[] = blockreference
+
+files[] = rc_panels.install
+files[] = rc_panels.module
+
+;stylesheets[all] = css/rc_panels.css

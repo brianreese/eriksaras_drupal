@@ -1,0 +1,31 @@
+name = Reese Creative Panels
+description = Please provide a description for your theme.
+base theme = omega
+screenshot = screenshot.png
+engine = phptemplate
+core = 7.x
+
+; ========================================
+; Stylesheets
+; ========================================
+stylesheets[all][] = css/rcpanels.normalize.css
+stylesheets[all][] = css/rcpanels.hacks.css
+stylesheets[all][] = css/rcpanels.styles.css
+stylesheets[all][] = css/rcpanels.no-query.css
+
+; ========================================
+; Scripts
+; ========================================
+scripts[] = js/rcpanels.behaviors.js
+
+; ========================================
+; Regions
+; ========================================
+regions[branding]       = Branding
+regions[content]        = Content
+regions[nav01]   	    = Nav level 1
+regions[nav02]   	    = Nav level 2
+regions[nav03]   	    = Nav level 3
+regions[background]		= Background Image
+regions[cart]			= Shopping Cart
+regions[footer]         = Footer

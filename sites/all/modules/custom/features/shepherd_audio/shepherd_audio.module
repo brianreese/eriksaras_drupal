@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the shepherd_audio feature.
+ */
+
+include_once 'shepherd_audio.features.inc';

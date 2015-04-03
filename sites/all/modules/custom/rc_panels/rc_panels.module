@@ -1,0 +1,460 @@
+<?php
+
+function rc_panels_menu(){
+	return array(
+ 		'view/load/%' => array(
+		    // 'title' => 'Loading content',
+		    'page arguments' => array(2),
+		    // 'description' => 'View and customize a one week menu.',
+		    'page callback' => 'rc_panels_load_view',
+		    'access arguments' => TRUE,
+		    'access callback' => TRUE,
+		    'type' => MENU_CALLBACK,
+    	),
+    	'cart/counter' => array(
+		    // 'title' => 'Loading content',
+		    // 'page arguments' => array(2),
+		    // 'description' => 'View and customize a one week menu.',
+		    'page callback' => 'rc_panels_cart_count',
+		    'access arguments' => TRUE,
+		    'access callback' => TRUE,
+		    'type' => MENU_CALLBACK,
+    	)
+	);
+}
+
+function rc_panels_block_info(){
+	$blocks = array();
+
+	$blocks['rcpnav_level_1'] = array(
+		'info' => 'Main level navigation',
+		'cache' => DRUPAL_CACHE_PER_PAGE,
+		'weight' => 50
+	);
+	$blocks['rcpnav_level_2'] = array(
+		'info' => 'All 2nd level navigation',
+		'cache' => DRUPAL_CACHE_PER_PAGE,
+		'weight' => 50
+	);
+	$blocks['rcpnav_level_3'] = array(
+		'info' => 'All 3rd level navigation (content)',
+		'cache' => DRUPAL_CACHE_PER_PAGE,
+		'weight' => 50
+	);
+
+	return $blocks;
+
+}
+
+function rc_panels_taxonomy_term_presave($term){
+	// $navTerm = taxonomy_get_term_by_name('recordings');
+	// foreach ($navTerm as $key => $value) {
+	// 	$navId = $key;
+	// }
+	// dd($term);
+	// dd($navTerm);
+	// dd($navId);
+	// $term->parents[0] = $navId; 
+}
+
+function rc_panels_node_presave($node){
+	// dd($node);
+	if ($node->type == 'audio_recording'){
+		// if(!empty($node->field_recording_venue_label)){
+		// 	$menu_tx_raw = taxonomy_vocabulary_machine_name_load('navigation');
+		// 	$vid = $menu_tx_raw->vid;
+			
+		// 	$taxonomy = taxonomy_get_tree($vid);
+
+		// 	$navTerm = taxonomy_get_term_by_name('recordings');
+
+		// 	foreach ($navTerm as $key => $value) {
+		// 		$navId = $key;
+		// 	}
+		// 	foreach($node->field_recording_venue_label['und'] as $key => $term_record){
+		// 		$target_tid = $term_record['tid'];
+		// 	}
+		// 	foreach ($taxonomy as $term) {
+		// 		if($term->tid == $target_tid){
+		// 			$term->parents[0] = 3;
+		// 			$result = taxonomy_term_save($term);
+		// 			dd($term);
+		// 		}
+		// 	}
+		// }
+	}
+}
+
+function rc_panels_block_View($block_name = ''){
+	
+
+	if ($block_name == 'rcpnav_level_1') {
+		$menu_tx_raw = taxonomy_vocabulary_machine_name_load('navigation');
+		$vid = $menu_tx_raw->vid;
+		$nav = rc_panels_get_nav($vid);
+
+
+		$content = '<div class="level1 vnav" id="nav01">
+               <ul>';
+        $_counter = 1;
+
+		foreach ($nav as $tid => $navItem) {
+			//Filter out any terms flagged disabled at navigation root.
+			if(isset($navItem->disabled)){
+				break;
+			}
+
+			$navItem->machine_name = rc_panels_get_machine_name($navItem->name);
+        	
+        	$content .= '<li class="navGroup"><a id="n'.sprintf('%02d', $_counter).'" href="#'.$navItem->machine_name.'"><span>'.$navItem->name.'</span></a></li>';
+        	$_counter ++;
+        	if(!isset($nav01name)){
+        		$nav01name = $navItem->machine_name;
+        	}
+		}	
+		$content .= '<li class="navGroup mobileNav"><a id="n'.sprintf('%02d', $_counter).'" href="#'.$nav01name.'"><span>Back</span></a></li>';
+		$content .= '</ul>
+            </div>';
+
+
+        $block = array(
+			'content' => $content,
+		);
+		return $block;
+
+
+	}
+
+	if ($block_name == 'rcpnav_level_2') {
+		$menu_tx_raw = taxonomy_vocabulary_machine_name_load('navigation');
+		$vid = $menu_tx_raw->vid;
+		$nav = rc_panels_get_nav($vid);
+
+        $_counter = 1;
+        $output ='';
+		foreach ($nav as $tid => $navItem) {
+			$navItem->machine_name = rc_panels_get_machine_name($navItem->name);
+			// kpr($navItem);
+
+			$output .= '<div class="nav02 vnav" id="'.$navItem->machine_name.'">';
+			$output .= '<ul>';
+
+			$_subCounter = 1;
+			if(isset($navItem->children)){
+				foreach ($navItem->children as $navItemL2) {
+					$term = taxonomy_term_load($navItemL2->tid);
+					// kpr($term);
+					if(!empty($term->field_nav_image)){
+						$url = file_create_url($term->field_nav_image['und'][0]['uri']);
+					}
+					else{
+						$url = $GLOBALS['base_url'] .'/'. drupal_get_path('module', 'rc_panels') . '/img/menu_placekolder.png';
+						$url = false;
+					}
+					
+
+
+					$output .= '<li class="cfn">';
+					$output .= '<a id="n'.rcp_numberclass($_counter).'s'.rcp_numberclass($_subCounter).'" href="#'.$navItem->machine_name.'--'.rc_panels_get_machine_name($navItemL2->name).'">';
+					//if($url){
+						$output .= rc_panels_format_nav_image($url, $navItemL2->name);
+						// $output .= '<span class="image"><image src="'.$term_url.'" alt="'.$navItemL2->name.'">';
+						// $output .= '<span class="arrow more"><cufon class="cufon cufon-canvas" alt="More" style="width: 33px; height: 13px;"><canvas width="39" height="13" style="width: 39px; height: 13px; top: 0px; left: 0px;"></canvas><cufontext>More</cufontext></cufon></span>';
+						// $output .= '</span>';
+					//}
+
+
+					$output .= $navItemL2->name;
+
+					$output .= '</a>';
+					$output .= '</li>';
+
+					$_subCounter ++;
+
+				}
+			}
+			$output .= '</ul>';
+			$output .= '</div>';
+
+
+
+			$content = $output;
+			$_counter ++;
+		}	
+		
+		// $content .= '</ul>
+  //           </div>';
+
+
+
+
+		// kpr($nav);
+
+		$block = array('content' => $content);
+		return $block;
+	}
+
+
+	if ($block_name == 'rcpnav_level_3') {
+		$menu_tx_raw = taxonomy_vocabulary_machine_name_load('navigation');
+		$vid = $menu_tx_raw->vid;
+		$nav = rc_panels_get_nav($vid);
+
+        $_counter = 1;
+        $output = '';
+
+		foreach ($nav as $tid => $navItem) {
+			$navItem->machine_name = rc_panels_get_machine_name($navItem->name);
+			$_subCounter = 1;
+			
+			if(isset($navItem->children)){
+				foreach ($navItem->children as $navItemL2) {
+					$term = taxonomy_term_load($navItemL2->tid);
+					// kpr($term);
+					$blocks = array();
+					if(!empty($term->field_linked_block)){
+						// kpr($term);
+						foreach ($term->field_linked_block['und'] as $item) {
+							$args = explode(':', $item['moddelta']);
+
+							
+							$block_content = module_invoke($args[0], 'block_view', $args[1]);
+							// kpr($block_content);
+							// if($args[0] == 'block'){
+							// 	$box = block_box_get($args[1]);
+							// 	$data = array(
+							// 	        'subject' => check_plain($box['title']),
+							// 	        'content' => check_markup($box['body'], $box['format'], FALSE),
+							// 	      );
+							// 	kpr($data);
+							// }
+							if($args[0] == 'views'){
+								$matches = array();
+								preg_match('/class="view view-\S+\s\b/iU', $block_content['content']['#markup'], $matches);
+								$view_name = str_replace('class="view view-', '', $matches[0]);
+								$view_name = preg_replace('/\-/', '_', $view_name);
+								$view_name = preg_replace('/\s/', '', $view_name);
+
+								$matches = array();
+								preg_match('/view-display-id-\S+\b/i', $block_content['content']['#markup'], $matches);
+								$display_id = str_replace('view-display-id-', '', $matches[0]);
+								$display_id = preg_replace('/\-/', '_', $display_id);
+
+								if(!$view_name){
+									$view_name = 'media_audio_';
+								}
+								// kpr($view_name);
+								$block_content['content'] = views_embed_view($view_name, 'default', $term->tid);
+							}
+							$output .= '<div class="article" id="'.$navItem->machine_name.'--'.rc_panels_get_machine_name($navItemL2->name).'">';
+							
+							if(($block_content) && isset($block_content['content'])){
+								$output .= '<h2>' . $block_content['subject'] . '</h2>';
+								$output .= render($block_content['content']);
+							}
+							
+							$output .='</div>';
+							// kpr($block_content);
+							unset($block_content);
+						}
+						
+					}
+					else{
+						//default placeholder content
+						$output .= '<div class="article" id="'.$navItem->machine_name.'--'.rc_panels_get_machine_name($navItemL2->name).'">';
+						$output .= '<h2>Placeholder Block</h2>';
+						$output .= '<p>Create a block and assign it to the menu item <em>'.l($navItemL2->name, '#overlay=admin/structure/taxonomy/navigation', array('html' => TRUE, 'external' => TRUE)).'</em>.</p>';
+						$output .='</div>';
+					}
+				}
+			}
+
+			$content = $output;
+			$_counter ++;
+		}	
+		
+		// $content .= '</ul>
+  //           </div>';
+
+
+
+
+		// kpr($nav);
+		//unset($block);
+
+		$block = array('content' => $content);
+		// kpr($block);
+		return $block;
+	}
+
+}
+
+
+// function rc_panels_get_taxonomy_tree(){
+// 	$menu_tx_raw = taxonomy_vocabulary_machine_name_load('navigation');
+// 	$vid = $menu_tx_raw->vid;
+// 	$nav = rc_panels_get_nav($vid);
+// }
+
+function rc_panels_get_nav($vid){
+	$nav_1_terms = array();
+	$menu_tx_raw = taxonomy_vocabulary_machine_name_load('navigation');
+	$vid = $menu_tx_raw->vid;
+	$taxonomy = taxonomy_get_tree($vid);
+	$taxonomy_tree = new stdClass();
+
+	foreach ($taxonomy as $term) {
+		// kpr($term);
+		
+		$tid = $term->tid;
+		
+		if($taxonomy_tree && !empty($tid)){
+			if ($term->depth == 0){
+				if(!isset($taxonomy_tree->$tid)){
+					$taxonomy_tree->$tid = new stdClass();
+				}
+				if(stripos(strtolower($term->name), 'disabled') !== false){
+					$taxonomy_tree->$tid->disabled = 1;
+				}	
+				if(isset($term->name) && isset($term->tid) && isset($term->vid)){
+					$taxonomy_tree->$tid->name = $term->name; 
+					$taxonomy_tree->$tid->tid = $term->tid;
+					$taxonomy_tree->$tid->vid = $term->vid;
+				}
+			}
+			if($term->depth == 1){
+				if(!empty($term->name) && !empty($term->tid) && !empty($term->vid)){
+					$parent_id = $term->parents[0];
+					if(!isset($taxonomy_tree->$parent_id)){
+						$taxonomy_tree->$parent_id = new stdClass();
+					}
+					if(!isset($taxonomy_tree->$parent_id->children)){
+						$taxonomy_tree->$parent_id->children = new stdClass();
+					}
+					if(!isset($taxonomy_tree->$parent_id->children->$tid)){
+						$taxonomy_tree->$parent_id->children->$tid = new stdClass();
+					}
+					$taxonomy_tree->$parent_id->children->$tid->name = $term->name;
+					$taxonomy_tree->$parent_id->children->$tid->tid = $term->tid;
+					$taxonomy_tree->$parent_id->children->$tid->vid = $term->vid;
+				}
+			}
+		}
+	}
+	// kpr($taxonomy_tree);
+	return $taxonomy_tree;
+}
+
+
+
+function rc_panels_get_machine_name($name){
+	$machine_readable = strtolower($name);
+	$machine_readable = preg_replace('@[^a-z0-9_]+@','_',$machine_readable);	
+	return $machine_readable;
+}
+
+
+
+function rcp_numberclass($n){
+	$formatted = sprintf('%02d', $n);
+	return $formatted;
+}
+
+
+function rc_panels_format_nav_image($url, $alt=''){
+	if($url){
+		$vars = array();
+		$vars['style_name'] = 'navstyle';
+		$vars['path'] = str_replace($GLOBALS['base_url'].'/sites/default/files/', '', $url);
+		$vars['alt'] = $alt;
+		$vars['title'] = $alt;
+		$vars['width'] = '178';
+		$vars['height'] = '118';
+		$image = theme_image_style($vars);
+	}
+	else{
+		$image = '<img src="'.$GLOBALS['base_url'] .'/'. drupal_get_path('module', 'rc_panels') . '/img/menu_placeholder.png'.'" alt="'.$alt.'">';
+	}
+	if($image){
+		$output = '<span class="image">' . $image;
+		$output .= '<span class="arrow more"><cufon class="cufon cufon-canvas" alt="More" style="width: 33px; height: 13px;"><canvas width="39" height="13" style="width: 39px; height: 13px; top: 0px; left: 0px;"></canvas><cufontext>More</cufontext></cufon></span>';
+		$output .= '</span>';
+		return $output;
+	}
+}
+
+
+/*
+ *	@param $args
+ *		$args, an array of arguments passed to the view as contextual arguments. 
+ */
+function rc_panels_load_view($view_name, $display_name = 'default', $args){
+	$block_content['content'] = views_embed_view($view_name, $display_name, $term->tid);
+	// dd($block_content);
+	return $block_content['content'];
+}
+
+
+function rc_panels_cart_count(){
+	// Load the current shopping cart.
+	$items = uc_cart_get_contents();
+	$counter = 0;
+	$item_count_raw = count($items);
+	foreach ($items as $item) {
+		$counter += $item->qty;
+	}
+	// kpr($items);
+	// return 'end test';
+	return drupal_json_output($counter);
+}
+// function rc_panels_uc_cart_item_presave($entity){
+//    // dd('**** New Item ****');
+//    // dd($entity);
+   
+//    if(!isset($_SESSION['cart_item_count'])){
+//    	$_SESSION['cart_item_count'] = 0;
+//    };
+//    $count = $_SESSION['cart_item_count'];
+//    $_d = ($entity->qty) - ($entity->original->qty);
+//    if(){
+
+//    }
+//    $new_count = $count + $_d;
+ 
+//   dd('**** ITEM COUNT (hook presave)****');
+//   dd($count);
+//   dd($new_count);
+//   $_SESSION['cart_item_count'] = $new_count;
+// }
+// function rc_panels_uc_cart_item_delete($entity){
+//    // dd('**** New Item ****');
+//    // dd($entity);
+   
+//    if(!isset($_SESSION['cart_item_count'])){
+//    	$_SESSION['cart_item_count'] = 0;
+//    };
+//    $count = $_SESSION['cart_item_count'];
+//    $_d = ($entity->qty) - ($entity->original->qty);
+//    $new_count = $count + $_d;
+ 
+//   dd('**** ITEM COUNT (hook delete)****');
+//   dd($count);
+//   dd($new_count);
+//   $_SESSION['cart_item_count'] = $new_count;
+// }
+// function rc_panels_uc_cart_item_insert($entity){
+//    // dd('**** New Item ****');
+//    // dd($entity);
+   
+//    if(!isset($_SESSION['cart_item_count'])){
+//    	$_SESSION['cart_item_count'] = 0;
+//    };
+//    $count = $_SESSION['cart_item_count'];
+//    $_d = ($entity->qty) - ($entity->original->qty);
+//    $new_count = $count + $_d;
+ 
+//   dd('**** ITEM COUNT (hook insert)****');
+//   dd($count);
+//   dd($new_count);
+//   $_SESSION['cart_item_count'] = $new_count;
+// }

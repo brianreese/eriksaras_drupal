@@ -1,0 +1,29 @@
+<?php
+
+function rc_panels_install(){
+  $style = image_style_save(array('name' => 'navstyle_02'));
+  $effect = array(
+    'name' => 'image_scale_and_crop',
+    'data' => array(
+      'width' => 178,
+      'height' => 118,
+      // 'upscale' => TRUE,
+    ),
+    'isid' => $style['isid'],
+  );
+  image_effect_save($effect);
+}
+
+function rc_panels_update_0001(){
+  // $style = image_style_save(array('name' => 'navstyle_02'));
+  // $effect = array(
+  //   'name' => 'image_scale_and_crop',
+  //   'data' => array(
+  //     'width' => 178,
+  //     'height' => 118,
+  //     // 'upscale' => TRUE,
+  //   ),
+  //   'isid' => $style['isid'],
+  // );
+  // image_effect_save($effect);
+}

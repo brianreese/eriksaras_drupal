@@ -1,0 +1,33 @@
+#cart-form-pane {
+	max-width: 600px;
+	margin: 60px auto 0px;
+}
+
+div#pdfContainer canvas {
+	margin: 0px auto;
+	display: block;
+}
+.pdf, .pdf a, .pdf a:visited{
+	color: #fff;
+	color: transparent;
+	a{
+		display: none;
+	}
+}
+iframe.pdf{
+	width:100%;
+}
+
+html, body, {
+	height:100%;
+	min-height:100%;
+	.view-media-scores, .view-content{
+		height: 100%;
+		.views-row, .views-field-field-preview-pdf, .field-content {
+			height: 100%;
+			iframe{
+				height: 100%;
+			}
+		}
+	}
+}

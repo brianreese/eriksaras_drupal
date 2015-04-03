@@ -1,0 +1,274 @@
+// Import external libraries.
+@import "compass";
+@import "breakpoint";
+@import "toolkit";
+@import "bourbon";
+
+// Import variables, abstractions, base styles and components using globbing.
+//
+// Globbing will always import files alphabetically. Optimally, all your
+// components should be self-contained and explicit enough to not have any
+// contained styles leak into unrelated components: The import order should not
+// affect the result.
+//
+// If there are variables, functions or mixins that depend on each other and
+// therefore need to be imported in a specific order you can import them
+// directly. Variables-, function- or mixin providing partials should never
+// output any styles themselves: Importing them multiple times to resolve
+// dependencies shouldn't be a problem.
+@import "../../variables/**/*";
+@import "../../abstractions/**/*";
+@import "../../base/**/*";
+@import "../../components/**/*";
+
+
+.article {
+	overflow: hidden;
+}
+body .l-branding{
+	top:0px;
+	.desktop{
+		display: none;
+	}
+	.mobile{
+		display: inline-block;
+	}
+}
+.mobileNav{
+	display:none;
+}
+
+@include breakpoint($-desk){
+
+	#admin-menu{
+		display: none;
+	}
+	#shoppingCart{
+		position:fixed;
+		padding-top:0px;
+	}
+	body #shoppingCart{
+		padding-top:0px;
+	}
+	#panelsWrap{
+		#nav01{
+			position:fixed !important;
+			left:190px !important;
+			overflow:scroll;
+			max-height: 100%;
+		}
+		.nav02{
+			overflow:scroll;
+			max-height: 100%;
+			.cfn{
+				span.image{
+					opacity: 0;
+				}
+			}
+		}
+	}
+	#panelsWrap.level2{
+		position:fixed;
+		width:100%;
+		// background: rgba(255,255,255,.8);
+		#rcp_content{
+			width:100%;
+			overflow:visible;
+			
+		}
+		#levelWrap_02{
+			max-height: 100%;
+			overflow: scroll;
+		}
+		.navGroup{
+			a{
+				// display: none;
+				span{
+					opacity: .5;
+				}
+				
+				&.on{
+					span{
+						opacity: 1;
+					}
+				}
+			}
+
+		}
+	}
+	#panelsWrap.level3{
+		// background: rgba(255,255,255,.8);
+		position:fixed;
+		width:100%;
+		z-index:100;
+		#nav01{
+			width:100%;
+			height: 53px;
+			overflow:visible;
+			ul{
+				width:100%;
+				li.navGroup{
+					width:100%;
+					a{
+						span{
+							width:100%;
+							height: 53px;
+						}
+					}
+
+				}
+			}
+		}
+		#levelWrap_02{
+			width:100%;
+			overflow:visible;
+		}
+		.level3{
+			width:70%;
+			margin-top:-60px;
+		}
+		#rcp_content{
+			overflow:scroll;
+			width:100%;
+
+		}
+		#nav01{
+			// width:120px;
+			padding-top: 0px;
+
+			li.navGroup{
+				display: none;
+				a{
+
+					span{
+						max-width: 100%;
+						// background-color:transparent;
+						// background: none;
+					}
+				}
+			}
+			li.mobileNav{
+				display: block;
+				a{
+					span{
+						height:90px;
+						width:150px;
+					}
+				}
+			}
+		}
+		.l-branding{
+			display: none;
+		}
+
+	}
+	// .cartSummary{
+	// 	z-index:10;
+	// }
+	// #panelsWrap{
+	// 	z-index:11;
+	// }
+	.cartSummary.cartView{
+		z-index:1000;
+		overflow: scroll;
+	}
+	#wrap.cartView{
+		left: -80% !important;
+		// #panelsWrap{
+		// 	z-index:1;
+		// }
+		#bgImg{
+			right:80%;
+		}
+		#levelWrap_01{
+			left:-10%;
+			#nav01{
+				left:0% !important;
+			}
+		}
+		#shoppingCart{
+			ul.menu{
+				opacity: .2;
+			}
+		}
+		.l-branding{
+			opacity: .1;
+		}
+		
+	}
+	.cartSummary{
+		width:80% !important;
+	}
+	
+
+}
+@include breakpoint($-micro){
+	body #panelsWrap{
+		#nav01{
+			max-width: 40%;
+			ul{
+				li{
+					a{
+						span{
+							width:100%;
+							height:80px;
+							font-size: .8em;
+						}
+					}
+				}
+			}
+			
+		}
+		#rcp_content{ 
+			#levelWrap_02 {
+				width:100%;
+				li {
+					a{
+						padding-left:45%;
+						font-size: .8em;
+						height:80px;
+					}
+				}
+			}
+		}
+	}
+	body #panelsWrap.level3{
+		#rcp_content{
+			#levelWrap_02{
+				// display: none;
+				width: 0px;
+				overflow:hidden;
+			}
+			#levelWrap_03{
+				// display: none;
+				width: 100%;
+				padding:0px .5em 1em;
+			}
+		}
+	}
+	body #shoppingCart{
+		ul.menu{
+			display: none;
+		}
+	}
+	body .l-branding{
+		max-width: 40%;
+	}
+	body #panelsWrap.level3 #nav01 li.mobileNav a span{
+		width:250%;
+		max-width: 250%;
+	}
+
+}
+
+@include breakpoint($desk){
+	body .l-branding{
+		top:80px;
+		.desktop{
+			display: inline-block;
+		}
+		.mobile{
+			display: none;
+		}
+	}
+}

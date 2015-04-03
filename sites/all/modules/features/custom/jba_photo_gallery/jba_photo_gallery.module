@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the jba photo gallery feature.
+ */
+
+include_once 'jba_photo_gallery.features.inc';
