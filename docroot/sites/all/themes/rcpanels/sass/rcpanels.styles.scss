@@ -52,6 +52,12 @@ input.form-submit{
 	}
 }
 
+input[type="submit"]{
+	& ~ input[type="submit"]{
+		margin-left: .6em;
+	}
+}
+
 #wrap {
 	// min-width: 1000px;
 	/* max-width: 1400px; */

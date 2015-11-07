@@ -1,0 +1,35 @@
+form{
+  fieldset{
+    border: none;
+    border-bottom: 1px solid $c_gray_light;
+    padding-bottom: 2em;
+    margin-bottom: 2em;
+    legend{
+      font-weight: 800;
+      color: $c1;
+      font-size: 1.5em;
+    }
+  }
+  table{
+    @include tablereset;
+    tbody{
+      @include tablereset;
+    }
+    thead{
+      @include tablereset;
+    }
+    tr,
+    tr.even,
+    tr.odd {
+      @include tablereset;
+    }
+    th{
+      @include tablereset;
+      padding: .5em 1em;
+    }
+    td{
+      @include tablereset;
+      padding: .5em 1em;
+    }
+  }
+}

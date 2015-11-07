@@ -1,0 +1,100 @@
+// Hide paypal checkout.
+.uc-cart-checkout-button{
+  display: none;
+}
+
+.uc-cart-checkout-form{
+  table{
+    max-width: 680px;
+  }
+  thead{
+    display: none;
+  }
+  tr{
+    td{
+      font-size:1.2em;
+      &.products{
+        font-size: 2em;
+        a {
+          color: $c_link;
+          text-decoration: none;
+          &:hover,
+          &:focus{
+            color: darken($c_link, 5);
+          }
+        }
+      }
+    }
+  }
+}
+
+.order-review-table{
+  width: 100%;
+  max-width: 800px;
+  @include tablereset;
+  tbody{
+    @include tablereset;
+  }
+  thead{
+    @include tablereset;
+  }
+  tr,
+  tr.even,
+  tr.odd {
+    @include tablereset;
+  }
+  tr.pane-title-row {
+    @include tablereset;
+    border-bottom: 1px solid $c_gray_light;
+    text-align: left;
+    font-size: 1.5em;
+    font-weight: 800;
+    color: $c1;
+    td{
+      padding-top:2em;
+    }
+    &:first-child{
+      td{
+        padding-top: 1em;
+      }
+    }
+  }
+  tr.review-button-row{
+    @include tablereset;
+    td{
+      padding-top: 2em;
+    }
+  }
+  th{
+    @include tablereset;
+    padding: .5em 1em;
+  }
+  td{
+    @include tablereset;
+    padding: .5em 1em;
+    font-size: 1.2em;
+    &.title-col{
+      padding-left: 0;
+      max-width: 60px;
+    }
+  }
+
+  table.cart-review{
+    width: auto;
+    margin: 0;
+    .qty{
+      max-width: 60px;
+    }
+    .products {
+
+    }
+    a {
+      color: $c_link;
+      text-decoration: none;
+      &:hover,
+      &:focus{
+        color: darken($c_link, 5);
+      }
+    }
+  }
+}
