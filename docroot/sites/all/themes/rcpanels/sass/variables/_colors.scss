@@ -1,0 +1,24 @@
+@mixin boxshadow($string){
+	-webkit-box-shadow: $string; 
+          box-shadow: $string;
+}
+
+$c1: #3b6f9e;
+$c2: #3FA9F5;
+
+$c_gray_ultra_light: #f4f4f4;
+$c_gray_light: #e1e1e1;
+$c_gray_med: #e2e2e2;
+$c_gray_dark: #323232;
+$c_white: #ffffff;
+
+$c_accent_main: #EF4578; // Bright pink
+$c_accent_alt: #9B163F; // Med Blue
+
+
+
+$c_body: #efefef;
+$c_header: #fff;
+$c_text_main: #323232;
+
+$c_link: #009dc8;

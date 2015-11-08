@@ -1,0 +1,6 @@
+name = Erik Saras Commerce
+description = Commerce customizations.
+core = 7.x
+package = Reese Creative Studio
+
+files[] = erik_commerce.module

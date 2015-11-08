@@ -1,0 +1,7 @@
+<?php
+
+function erik_commerce_form_alter(&$form, &$form_state, $form_id) {
+  if (strpos($form_id, 'uc_cart') === 0) {
+//    print_r($form);
+  }
+}

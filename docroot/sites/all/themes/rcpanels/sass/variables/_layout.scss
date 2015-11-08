@@ -1,0 +1,11 @@
+$-micro: max-width 550px;
+$tab: 790px; // At 44em.
+$desk: 1000px; // At 70em.
+$-tab: max-width $tab; //max-width query
+$-desk: max-width $desk; //max-width query
+
+
+@mixin tablereset {
+  border: none;
+  background-color: transparent;
+}
