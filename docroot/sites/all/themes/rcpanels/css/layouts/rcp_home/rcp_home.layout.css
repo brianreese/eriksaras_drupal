@@ -191,7 +191,7 @@ body .l-branding {
   #panelsWrap #nav01 {
     position: fixed !important;
     left: 190px !important;
-    overflow: scroll;
+    overflow: hidden;
     max-height: 100%; }
   /* line 60, ../../../sass/layouts/rcp_home/rcp_home.layout.scss */
   #panelsWrap .nav02 {
