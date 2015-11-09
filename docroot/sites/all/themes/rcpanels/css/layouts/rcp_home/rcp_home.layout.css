@@ -348,3 +348,7 @@ body .l-branding {
     /* line 270, ../../../sass/layouts/rcp_home/rcp_home.layout.scss */
     body .l-branding .mobile {
       display: none; } }
+/* line 277, ../../../sass/layouts/rcp_home/rcp_home.layout.scss */
+#nav01,
+.nav02P {
+  -ms-overflow-style: none; }
