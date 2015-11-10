@@ -294,3 +294,11 @@ body .l-branding{
 		}
 	}
 }
+#toolbarViewer{
+	button#download,
+	button#openFile,
+	button#print,
+	#toolbarViewerRight {
+		display: none !important;
+	}
+}

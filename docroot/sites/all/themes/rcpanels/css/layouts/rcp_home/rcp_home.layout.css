@@ -365,3 +365,10 @@ body .l-branding {
   padding: 2px 6px 3px;
   box-sizing: border-box;
   text-decoration: none; }
+
+/* line 301, ../../../sass/layouts/rcp_home/rcp_home.layout.scss */
+#toolbarViewer button#download,
+#toolbarViewer button#openFile,
+#toolbarViewer button#print,
+#toolbarViewer #toolbarViewerRight {
+  display: none !important; }
