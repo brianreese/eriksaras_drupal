@@ -2698,3 +2698,8 @@ body.adminimal-theme .custom_css_not_found .css_path {
 body.page-admin-structure-views-view #views-ui-edit-display-form #edit-options #edit-style-options-row fieldset#edit-style-options-row--2 {
   float: left;
 }
+
+/* Hide rcpanels blocks on admin pages */
+.not-front .block-rc-panels {
+  display: none !important;
+}
