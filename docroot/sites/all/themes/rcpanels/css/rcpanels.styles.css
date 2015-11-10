@@ -453,13 +453,13 @@ ul.tabs--primary {
     .view.view-media-scores .views-row .views-field-display-price {
       font-size: 1em;
       float: left;
-      margin: 0px 10px 30px 0px; }
+      margin: 0px 20px 30px 0px; }
     /* line 362, ../sass/rcpanels.styles.scss */
     .view.view-media-scores .views-row .views-field-title {
       font-size: 1em;
       font-weight: bold;
       background: none;
-      width: 60%;
+      width: 55%;
       float: left; }
       /* line 368, ../sass/rcpanels.styles.scss */
       .view.view-media-scores .views-row .views-field-title a {
@@ -481,8 +481,14 @@ ul.tabs--primary {
     /* line 399, ../sass/rcpanels.styles.scss */
     .view.view-media-scores .views-row.views-row-first {
       border-top: none; }
+    /* line 402, ../sass/rcpanels.styles.scss */
+    .view.view-media-scores .views-row:after {
+      content: '';
+      clear: both;
+      display: block;
+      height: 1em; }
 
-/* line 408, ../sass/rcpanels.styles.scss */
+/* line 414, ../sass/rcpanels.styles.scss */
 .level4.offCanvas {
   position: absolute;
   z-index: 10;
@@ -494,14 +500,14 @@ ul.tabs--primary {
   -webkit-transition: 1s all ease;
   -moz-transition: 1s all ease;
   transition: 1s all ease; }
-  /* line 417, ../sass/rcpanels.styles.scss */
+  /* line 423, ../sass/rcpanels.styles.scss */
   .level4.offCanvas.active {
     right: 0px; }
 
 /*----------------------------------*/
 /*           Shopping Cart          */
 /*----------------------------------*/
-/* line 431, ../sass/rcpanels.styles.scss */
+/* line 437, ../sass/rcpanels.styles.scss */
 #shoppingCartButton {
   position: absolute;
   top: 0;
@@ -510,7 +516,7 @@ ul.tabs--primary {
   padding: 10px;
   text-align: right; }
 
-/* line 439, ../sass/rcpanels.styles.scss */
+/* line 445, ../sass/rcpanels.styles.scss */
 #shoppingCart {
   position: absolute;
   top: 0;
@@ -518,38 +524,38 @@ ul.tabs--primary {
   z-index: 400;
   padding-top: 20px; }
 
-/* line 446, ../sass/rcpanels.styles.scss */
+/* line 452, ../sass/rcpanels.styles.scss */
 .basket-button-count {
   display: block;
   padding: 10px 30px 20px;
   background: #fff;
   color: #3fa9f5;
   background: rgba(255, 255, 255, 0.5) url(../images/icons/shopping-cart-empty.png) center 70% no-repeat; }
-  /* line 452, ../sass/rcpanels.styles.scss */
+  /* line 458, ../sass/rcpanels.styles.scss */
   .basket-button-count.cart_full {
     background-image: url(../images/icons/shopping-cart-full.png); }
-  /* line 456, ../sass/rcpanels.styles.scss */
+  /* line 462, ../sass/rcpanels.styles.scss */
   .basket-button-count.cart_empty .cartCount {
     color: transparent;
     opacity: 0; }
-  /* line 461, ../sass/rcpanels.styles.scss */
+  /* line 467, ../sass/rcpanels.styles.scss */
   .basket-button-count .cartCount {
     position: relative;
     top: -6px;
     font-size: 13px; }
 
-/* line 467, ../sass/rcpanels.styles.scss */
+/* line 473, ../sass/rcpanels.styles.scss */
 #cartPanelLink {
   text-decoration: none;
   color: #3fa9f5; }
 
-/* line 471, ../sass/rcpanels.styles.scss */
+/* line 477, ../sass/rcpanels.styles.scss */
 #wrap {
   left: 0px;
   -webkit-transition: left 0.3s ease;
   -moz-transition: left 0.3s ease;
   transition: left 0.3s ease; }
-  /* line 474, ../sass/rcpanels.styles.scss */
+  /* line 480, ../sass/rcpanels.styles.scss */
   #wrap #cartFadeOut {
     position: absolute;
     background: rgba(0, 0, 0, 0);
@@ -559,19 +565,19 @@ ul.tabs--primary {
     -webkit-transition: background 0.3s ease;
     -moz-transition: background 0.3s ease;
     transition: background 0.3s ease; }
-  /* line 484, ../sass/rcpanels.styles.scss */
+  /* line 490, ../sass/rcpanels.styles.scss */
   #wrap #nav01 {
     -webkit-transition: margin-left 0.3s ease;
     -moz-transition: margin-left 0.3s ease;
     transition: margin-left 0.3s ease; }
 
-/* line 488, ../sass/rcpanels.styles.scss */
+/* line 494, ../sass/rcpanels.styles.scss */
 #wrap.cartView {
   left: -300px;
   -webkit-transition: left 0.3s ease;
   -moz-transition: left 0.3s ease;
   transition: left 0.3s ease; }
-  /* line 491, ../sass/rcpanels.styles.scss */
+  /* line 497, ../sass/rcpanels.styles.scss */
   #wrap.cartView #cartFadeOut {
     background: rgba(0, 0, 0, 0.5);
     width: 100%;
@@ -579,28 +585,28 @@ ul.tabs--primary {
     -webkit-transition: background 0.3s ease;
     -moz-transition: background 0.3s ease;
     transition: background 0.3s ease; }
-  /* line 498, ../sass/rcpanels.styles.scss */
+  /* line 504, ../sass/rcpanels.styles.scss */
   #wrap.cartView #nav01 {
     left: 0px;
     pointer-events: none;
     -webkit-transition: margin-left 0.3s ease;
     -moz-transition: margin-left 0.3s ease;
     transition: margin-left 0.3s ease; }
-  /* line 506, ../sass/rcpanels.styles.scss */
+  /* line 512, ../sass/rcpanels.styles.scss */
   #wrap.cartView #levelWrap_01,
   #wrap.cartView #rcp_content {
     pointer-events: none; }
-  /* line 509, ../sass/rcpanels.styles.scss */
+  /* line 515, ../sass/rcpanels.styles.scss */
   #wrap.cartView .basket-button-count {
     background-color: #fff;
     -webkit-transition: background-color 0.3s ease;
     -moz-transition: background-color 0.3s ease;
     transition: background-color 0.3s ease; }
-  /* line 514, ../sass/rcpanels.styles.scss */
+  /* line 520, ../sass/rcpanels.styles.scss */
   #wrap.cartView.level2open #nav01 {
     margin-left: -491px; }
 
-/* line 520, ../sass/rcpanels.styles.scss */
+/* line 526, ../sass/rcpanels.styles.scss */
 .cartSummary {
   position: absolute;
   overflow: hidden;
@@ -612,7 +618,7 @@ ul.tabs--primary {
   background: #fff;
   padding: 20px 10px;
   padding-top: 30px; }
-  /* line 533, ../sass/rcpanels.styles.scss */
+  /* line 539, ../sass/rcpanels.styles.scss */
   .cartSummary input[value=Remove] {
     color: transparent;
     background-color: #000;
@@ -624,27 +630,27 @@ ul.tabs--primary {
     overflow: hidden;
     background: url(../images/icons/icon-close.png) left top no-repeat;
     background-size: contain; }
-    /* line 544, ../sass/rcpanels.styles.scss */
+    /* line 550, ../sass/rcpanels.styles.scss */
     .cartSummary input[value=Remove]:before {
       content: 'X';
       position: absolute;
       color: #000; }
-  /* line 551, ../sass/rcpanels.styles.scss */
+  /* line 557, ../sass/rcpanels.styles.scss */
   .cartSummary table th {
     display: none; }
-  /* line 554, ../sass/rcpanels.styles.scss */
+  /* line 560, ../sass/rcpanels.styles.scss */
   .cartSummary table tr {
     background: none; }
-    /* line 556, ../sass/rcpanels.styles.scss */
+    /* line 562, ../sass/rcpanels.styles.scss */
     .cartSummary table tr td {
       padding: 5px 2px;
       vertical-align: bottom; }
-      /* line 559, ../sass/rcpanels.styles.scss */
+      /* line 565, ../sass/rcpanels.styles.scss */
       .cartSummary table tr td a {
         text-decoration: none;
         pointer-events: none;
         color: #333; }
-  /* line 569, ../sass/rcpanels.styles.scss */
+  /* line 575, ../sass/rcpanels.styles.scss */
   .cartSummary #uc-cart-view-form #edit-actions input.form-submit {
     background: #3b6f9e;
     color: #fff;
@@ -655,18 +661,18 @@ ul.tabs--primary {
     margin: 5px 0px;
     box-sizing: border-box;
     float: none; }
-  /* line 580, ../sass/rcpanels.styles.scss */
+  /* line 586, ../sass/rcpanels.styles.scss */
   .cartSummary #uc-cart-view-form #edit-actions .uc-cart-checkout-button-container {
     text-align: center; }
-    /* line 582, ../sass/rcpanels.styles.scss */
+    /* line 588, ../sass/rcpanels.styles.scss */
     .cartSummary #uc-cart-view-form #edit-actions .uc-cart-checkout-button-container .uc-cart-checkout-button {
       float: none;
       padding: 20px; }
 
-/* line 590, ../sass/rcpanels.styles.scss */
+/* line 596, ../sass/rcpanels.styles.scss */
 #shoppingCart .block__title {
   display: none; }
-/* line 593, ../sass/rcpanels.styles.scss */
+/* line 599, ../sass/rcpanels.styles.scss */
 #shoppingCart ul.menu {
   position: absolute;
   right: 100%;
@@ -677,93 +683,93 @@ ul.tabs--primary {
   padding: 20px 20px 10px 10px;
   background: rgba(255, 255, 255, 0.5);
   font-size: .9em; }
-  /* line 603, ../sass/rcpanels.styles.scss */
+  /* line 609, ../sass/rcpanels.styles.scss */
   #shoppingCart ul.menu li {
     list-style: none;
     display: inline-block;
     text-align: right; }
-    /* line 607, ../sass/rcpanels.styles.scss */
+    /* line 613, ../sass/rcpanels.styles.scss */
     #shoppingCart ul.menu li a {
       color: #3b6f9e;
       text-decoration: none; }
-    /* line 611, ../sass/rcpanels.styles.scss */
+    /* line 617, ../sass/rcpanels.styles.scss */
     #shoppingCart ul.menu li:last-child {
       display: none; }
 
-/* line 618, ../sass/rcpanels.styles.scss */
+/* line 624, ../sass/rcpanels.styles.scss */
 .logged-in #shoppingCart ul.menu {
   width: 120px; }
-  /* line 620, ../sass/rcpanels.styles.scss */
+  /* line 626, ../sass/rcpanels.styles.scss */
   .logged-in #shoppingCart ul.menu li:first-child, .logged-in #shoppingCart ul.menu li:last-child {
     display: none; }
 
-/* line 627, ../sass/rcpanels.styles.scss */
+/* line 633, ../sass/rcpanels.styles.scss */
 #panelsWrap .messages {
   position: fixed;
   bottom: 10px;
   right: 10px; }
 
-/* line 633, ../sass/rcpanels.styles.scss */
+/* line 639, ../sass/rcpanels.styles.scss */
 iframe.pdf {
   width: 100%; }
 
-/* line 637, ../sass/rcpanels.styles.scss */
+/* line 643, ../sass/rcpanels.styles.scss */
 iframe.cboxIframe html, iframe.cboxIframe body, iframe.cboxIframe iframe, iframe.cboxIframe div {
   height: 100%; }
 
-/* line 642, ../sass/rcpanels.styles.scss */
+/* line 648, ../sass/rcpanels.styles.scss */
 .cart-empty-wrap {
   margin: 0px auto;
   padding: 20px 15px;
   width: 100%;
   max-width: 600px; }
-  /* line 647, ../sass/rcpanels.styles.scss */
+  /* line 653, ../sass/rcpanels.styles.scss */
   .cart-empty-wrap .uc-cart-empty {
     width: 100%; }
-  /* line 652, ../sass/rcpanels.styles.scss */
+  /* line 658, ../sass/rcpanels.styles.scss */
   .cart-empty-wrap .form-submit {
     width: 100%;
     max-width: 300px; }
 
-/* line 661, ../sass/rcpanels.styles.scss */
+/* line 667, ../sass/rcpanels.styles.scss */
 .admin-view table {
   background-color: rgba(0, 0, 0, 0.08);
   width: 100%;
   margin-bottom: 50px; }
-  /* line 665, ../sass/rcpanels.styles.scss */
+  /* line 671, ../sass/rcpanels.styles.scss */
   .admin-view table tr, .admin-view table th, .admin-view table td {
     background: transparent; }
-  /* line 669, ../sass/rcpanels.styles.scss */
+  /* line 675, ../sass/rcpanels.styles.scss */
   .admin-view table th, .admin-view table td {
     padding: 4px 10px; }
-  /* line 672, ../sass/rcpanels.styles.scss */
+  /* line 678, ../sass/rcpanels.styles.scss */
   .admin-view table th {
     background-color: #3b6f9e;
     color: #ddd; }
-    /* line 675, ../sass/rcpanels.styles.scss */
+    /* line 681, ../sass/rcpanels.styles.scss */
     .admin-view table th a, .admin-view table th a:visited {
       color: #fff; }
-    /* line 678, ../sass/rcpanels.styles.scss */
+    /* line 684, ../sass/rcpanels.styles.scss */
     .admin-view table th.active {
       background-color: #2d5579; }
-  /* line 682, ../sass/rcpanels.styles.scss */
+  /* line 688, ../sass/rcpanels.styles.scss */
   .admin-view table .views-field-field-gallery-photo {
     width: 50px; }
-  /* line 685, ../sass/rcpanels.styles.scss */
+  /* line 691, ../sass/rcpanels.styles.scss */
   .admin-view table tr:hover {
     background-color: rgba(0, 0, 0, 0.08); }
-/* line 690, ../sass/rcpanels.styles.scss */
+/* line 696, ../sass/rcpanels.styles.scss */
 .admin-view h2.block__title {
   float: left; }
-/* line 693, ../sass/rcpanels.styles.scss */
+/* line 699, ../sass/rcpanels.styles.scss */
 .admin-view .view-header {
   float: left;
   padding: 10px 20px; }
-/* line 697, ../sass/rcpanels.styles.scss */
+/* line 703, ../sass/rcpanels.styles.scss */
 .admin-view .views-exposed-form {
   clear: both; }
 
-/* line 704, ../sass/rcpanels.styles.scss */
+/* line 710, ../sass/rcpanels.styles.scss */
 .block--views-admin-panel-block h2.block__title,
 .block--views-admin-panel-block-1 h2.block__title,
 .block--views-admin-panel-block-2 h2.block__title,
@@ -772,61 +778,61 @@ iframe.cboxIframe html, iframe.cboxIframe body, iframe.cboxIframe iframe, iframe
 
 /* Animation */
 @-moz-keyframes loadingAnimation {
-  /* line 717, ../sass/rcpanels.styles.scss */
+  /* line 723, ../sass/rcpanels.styles.scss */
   from {
     opacity: 0.8; }
 
-  /* line 718, ../sass/rcpanels.styles.scss */
+  /* line 724, ../sass/rcpanels.styles.scss */
   to {
     opacity: 0.2; } }
 
 @-webkit-keyframes loadingAnimation {
-  /* line 722, ../sass/rcpanels.styles.scss */
+  /* line 728, ../sass/rcpanels.styles.scss */
   from {
     opacity: 0.8; }
 
-  /* line 723, ../sass/rcpanels.styles.scss */
+  /* line 729, ../sass/rcpanels.styles.scss */
   to {
     opacity: 0.2; } }
 
 @-o-keyframes loadingAnimation {
-  /* line 727, ../sass/rcpanels.styles.scss */
+  /* line 733, ../sass/rcpanels.styles.scss */
   from {
     opacity: 0.8; }
 
-  /* line 728, ../sass/rcpanels.styles.scss */
+  /* line 734, ../sass/rcpanels.styles.scss */
   to {
     opacity: 0.2; } }
 
 @-ms-keyframes loadingAnimation {
-  /* line 732, ../sass/rcpanels.styles.scss */
+  /* line 738, ../sass/rcpanels.styles.scss */
   from {
     opacity: 0.8; }
 
-  /* line 733, ../sass/rcpanels.styles.scss */
+  /* line 739, ../sass/rcpanels.styles.scss */
   to {
     opacity: 0.2; } }
 
 @-khtml-keyframes loadingAnimation {
-  /* line 737, ../sass/rcpanels.styles.scss */
+  /* line 743, ../sass/rcpanels.styles.scss */
   from {
     opacity: 0.8; }
 
-  /* line 738, ../sass/rcpanels.styles.scss */
+  /* line 744, ../sass/rcpanels.styles.scss */
   to {
     opacity: 0.2; } }
 
 @keyframes loadingAnimation {
-  /* line 742, ../sass/rcpanels.styles.scss */
+  /* line 748, ../sass/rcpanels.styles.scss */
   from {
     opacity: 0.8; }
 
-  /* line 743, ../sass/rcpanels.styles.scss */
+  /* line 749, ../sass/rcpanels.styles.scss */
   to {
     opacity: 0.2; } }
 
 /* The container */
-/* line 747, ../sass/rcpanels.styles.scss */
+/* line 753, ../sass/rcpanels.styles.scss */
 #loading {
   height: 30px;
   width: 100px;
@@ -838,25 +844,25 @@ iframe.cboxIframe html, iframe.cboxIframe body, iframe.cboxIframe iframe, iframe
   margin-top: -15px;
   display: block; }
 
-/* line 761, ../sass/rcpanels.styles.scss */
+/* line 767, ../sass/rcpanels.styles.scss */
 .ui-loading {
   width: 100%;
   height: 50px;
   text-align: center;
   margin-top: 15px; }
 
-/* line 765, ../sass/rcpanels.styles.scss */
+/* line 771, ../sass/rcpanels.styles.scss */
 .ui-loading ul, .ui-loading li {
   list-style-type: none;
   list-type: none;
   margin: 0px;
   padding: 0px; }
 
-/* line 769, ../sass/rcpanels.styles.scss */
+/* line 775, ../sass/rcpanels.styles.scss */
 .ui-loading ul {
   display: inline-block; }
 
-/* line 770, ../sass/rcpanels.styles.scss */
+/* line 776, ../sass/rcpanels.styles.scss */
 .ui-loading li {
   float: left;
   display: inline;
@@ -870,47 +876,47 @@ iframe.cboxIframe html, iframe.cboxIframe body, iframe.cboxIframe iframe, iframe
   -moz-animation: loadingAnimation 1.5s infinite;
   animation: loadingAnimation 1.5s infinite; }
 
-/* line 785, ../sass/rcpanels.styles.scss */
+/* line 791, ../sass/rcpanels.styles.scss */
 .ui-loading li:nth-child(1) {
   -webkit-animation-delay: 0s;
   -moz-animation-delay: 0s;
   animation-delay: 0s; }
 
-/* line 790, ../sass/rcpanels.styles.scss */
+/* line 796, ../sass/rcpanels.styles.scss */
 .ui-loading li:nth-child(2) {
   -webkit-animation-delay: 500ms;
   -moz-animation-delay: 500ms;
   animation-delay: 500ms; }
 
-/* line 795, ../sass/rcpanels.styles.scss */
+/* line 801, ../sass/rcpanels.styles.scss */
 .ui-loading li:nth-child(3) {
   -webkit-animation-delay: 1000ms;
   -moz-animation-delay: 1000ms;
   animation-delay: 1000ms; }
 
-/* line 801, ../sass/rcpanels.styles.scss */
+/* line 807, ../sass/rcpanels.styles.scss */
 #cartPreviewAjax span.loadingMessage {
   display: block;
   width: 100%;
   text-align: center;
   margin-top: 120px; }
-/* line 807, ../sass/rcpanels.styles.scss */
+/* line 813, ../sass/rcpanels.styles.scss */
 #cartPreviewAjax #loading {
   top: 200px; }
 
-/* line 815, ../sass/rcpanels.styles.scss */
+/* line 821, ../sass/rcpanels.styles.scss */
 div#admin-menu {
   background: rgba(0, 0, 0, 0.2); }
 
-/* line 819, ../sass/rcpanels.styles.scss */
+/* line 825, ../sass/rcpanels.styles.scss */
 #admin-menu .dropdown a, #admin-menu .dropdown li > span {
   border: none; }
 
-/* line 826, ../sass/rcpanels.styles.scss */
+/* line 832, ../sass/rcpanels.styles.scss */
 #panelsWrap #nav01 ul li.mobileNav a span {
   padding-left: 20px;
   padding-top: 15px; }
-  /* line 829, ../sass/rcpanels.styles.scss */
+  /* line 835, ../sass/rcpanels.styles.scss */
   #panelsWrap #nav01 ul li.mobileNav a span:before {
     content: ' ';
     background: url(../images/icons/icon-menu.png) top left no-repeat;
@@ -923,17 +929,17 @@ div#admin-menu {
     float: left; }
 
 /* --------- Temporary ----------- */
-/* line 845, ../sass/rcpanels.styles.scss */
+/* line 851, ../sass/rcpanels.styles.scss */
 .l-branding {
   position: fixed;
   z-index: 100;
   top: 80px;
   max-width: 220px; }
 
-/* line 851, ../sass/rcpanels.styles.scss */
+/* line 857, ../sass/rcpanels.styles.scss */
 .messages--error {
   display: none; }
 
-/* line 854, ../sass/rcpanels.styles.scss */
+/* line 860, ../sass/rcpanels.styles.scss */
 .messages--warning {
   display: none; }
