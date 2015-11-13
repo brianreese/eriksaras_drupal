@@ -1,0 +1,19 @@
+<?php
+
+/**
+ * Implements hook_ckeditor_plugin()
+ *
+ * @return type
+ */
+function ckeditor_linkbox_ckeditor_plugin() {
+  $plugins = array();
+  $plugins['linkbox'] = array(
+    'name' => 'linkbox',
+    'desc' => t('Linkbox Plugin'),
+    'path' => drupal_get_path('module', 'ckeditor_linkbox') . '/plugins/linkbox/',
+    'buttons' => array(
+      'Linkbox' => array('label' => 'Linkbox', 'icon' => 'icons/linkbox.png'),
+    )
+  );
+  return $plugins;
+}
