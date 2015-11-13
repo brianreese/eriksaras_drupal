@@ -287,10 +287,13 @@ body .l-branding{
 			background: rgba(#D0E7F1, 0.6);
 			border: none;
 			outline: none;
-			margin: -15px 0px 10px;
+			margin: 0 0px 10px;
 			padding: 2px 6px 3px;
 			box-sizing: border-box;
 			text-decoration: none;
+		}
+		form ~ a {
+			margin-top: -15px;
 		}
 	}
 }
