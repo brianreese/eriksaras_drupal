@@ -929,18 +929,23 @@ div#admin-menu {
     margin-top: 2px;
     float: left; }
 
+/* line 853, ../sass/rcpanels.styles.scss */
+.cart-disabled .add-to-cart,
+.cart-disabled .display-price {
+  display: none; }
+
 /* --------- Temporary ----------- */
-/* line 852, ../sass/rcpanels.styles.scss */
+/* line 859, ../sass/rcpanels.styles.scss */
 .l-branding {
   position: fixed;
   z-index: 100;
   top: 80px;
   max-width: 220px; }
 
-/* line 858, ../sass/rcpanels.styles.scss */
+/* line 865, ../sass/rcpanels.styles.scss */
 .messages--error {
   display: none; }
 
-/* line 861, ../sass/rcpanels.styles.scss */
+/* line 868, ../sass/rcpanels.styles.scss */
 .messages--warning {
   display: none; }

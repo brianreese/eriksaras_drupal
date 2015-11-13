@@ -11,6 +11,13 @@ function rc_panels_preprocess_html(&$variables) {
     drupal_add_css('http://fonts.googleapis.com/css?family=Open+Sans:400italic,400,300,700');
 }
 
+function rc_panels_preprocess_node(&$variables) {
+  if ($variables['type'] == 'musical_score'){
+    if(!$variables['field_sellable'][0]['value']){
+      $variables['classes_array'][] = 'cart-disabled';
+    }
+  }
+}
 
 function rcpanels_uc_cart_block_content($variables) {
   $help_text = $variables['help_text'];

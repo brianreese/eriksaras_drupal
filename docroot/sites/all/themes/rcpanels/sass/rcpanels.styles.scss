@@ -848,6 +848,13 @@ div#admin-menu {
 	}
 }
 
+.cart-disabled {
+	.add-to-cart,
+	.display-price {
+		display: none;
+	}
+}
+
 /* --------- Temporary ----------- */
 .l-branding{
 	position:fixed;
