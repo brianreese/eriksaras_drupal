@@ -22,3 +22,10 @@ sites/all/themes/README.txt
 # System files
 .idea
 .DS_STORE
+.bundle
+*/.bundle
+*/.bundle/config
+docroot/sites/all/themes/*/.bundle
+docroot/sites/all/themes/*/.bundle/config
+docroot/sites/all/themes/rcpanels/.bundle/config
+
