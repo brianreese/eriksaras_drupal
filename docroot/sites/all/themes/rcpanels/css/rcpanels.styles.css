@@ -949,3 +949,25 @@ div#admin-menu {
 /* line 868, ../sass/rcpanels.styles.scss */
 .messages--warning {
   display: none; }
+
+/* line 873, ../sass/rcpanels.styles.scss */
+.nav02-description {
+  width: 125%;
+  margin-top: -40px;
+  opacity: 1;
+  margin-left: 0px;
+  -webkit-transition: 0.4s all ease;
+  -moz-transition: 0.4s all ease;
+  transition: 0.4s all ease; }
+  @media (max-width: 1000px) {
+    /* line 873, ../sass/rcpanels.styles.scss */
+    .nav02-description {
+      display: none; } }
+
+/* line 884, ../sass/rcpanels.styles.scss */
+.level3 .nav02-description {
+  opacity: 0;
+  margin-left: -400%;
+  -webkit-transition: 0.4s all ease;
+  -moz-transition: 0.4s all ease;
+  transition: 0.4s all ease; }

@@ -868,3 +868,22 @@ div#admin-menu {
 .messages--warning{
 	display:none;
 }
+
+
+.nav02-description {
+	width: 125%;
+	margin-top: -40px;
+	opacity: 1;
+	margin-left: 0px;
+	@include transition(.4s all ease);
+	@include breakpoint($-desk) {
+		display: none;
+	}
+}
+.level3{
+	.nav02-description {
+		opacity: 0;
+		margin-left: -400%;
+		@include transition(.4s all ease);
+	}
+}
