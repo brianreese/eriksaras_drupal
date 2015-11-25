@@ -1,8 +1,17 @@
 <?php
 
 function erik_commerce_form_alter(&$form, &$form_state, $form_id) {
+  // Newsletter signup form.
   if (strpos($form_id, 'newsletter_subscribe_form') === 0) {
-    $form['email']['#default_value'] = "email";
+    $form['email']['#default_value'] = "";
+    $form['email']['#size'] = 60;
+    $form['email']['#title'] = "Your e-mail address";
     $form['newsletter-submit']['#value'] = "Subscribe";
+  }
+
+  // Newsletter details form.
+  if (strpos($form_id, 'newsletter_manage_subscriptions_form') === 0) {
+    $form['mail']['email']['#size'] = 60;
+    $form['field_newsletter_list']['#attributes']['class'][] = 'element-invisible';
   }
 }
