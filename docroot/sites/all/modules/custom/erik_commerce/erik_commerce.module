@@ -1,7 +1,8 @@
 <?php
 
 function erik_commerce_form_alter(&$form, &$form_state, $form_id) {
-  if (strpos($form_id, 'uc_cart') === 0) {
-//    print_r($form);
+  if (strpos($form_id, 'newsletter_subscribe_form') === 0) {
+    $form['email']['#default_value'] = "email";
+    $form['newsletter-submit']['#value'] = "Subscribe to the Newsletter";
   }
 }
