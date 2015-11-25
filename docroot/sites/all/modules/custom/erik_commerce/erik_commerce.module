@@ -3,6 +3,6 @@
 function erik_commerce_form_alter(&$form, &$form_state, $form_id) {
   if (strpos($form_id, 'newsletter_subscribe_form') === 0) {
     $form['email']['#default_value'] = "email";
-    $form['newsletter-submit']['#value'] = "Subscribe to the Newsletter";
+    $form['newsletter-submit']['#value'] = "Subscribe";
   }
 }
