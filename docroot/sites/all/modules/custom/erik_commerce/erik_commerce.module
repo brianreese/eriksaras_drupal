@@ -14,4 +14,10 @@ function erik_commerce_form_alter(&$form, &$form_state, $form_id) {
     $form['mail']['email']['#size'] = 60;
     $form['field_newsletter_list']['#attributes']['class'][] = 'element-invisible';
   }
+
+  // Global Contact form.
+  if (strpos($form_id, 'contact_site_form') === 0) {
+    $form['mail']['#default_value'] = "";
+    $form['name']['#default_value'] = "";
+  }
 }
