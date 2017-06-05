@@ -21,6 +21,11 @@
 @import "base/**/*";
 @import "components/**/*";
 
+html,
+head,
+body {
+  height: 100%;
+}
 
 body{
 	font-family: 'Open Sans', sans-serif;
