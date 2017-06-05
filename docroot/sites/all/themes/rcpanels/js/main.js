@@ -769,7 +769,7 @@ $(document).ready(function(){
 	var hoverable = false;
 
 	$(window).load(function(){
-		loadHomeSet(); // does this need to be in own fn?
+		// loadHomeSet(); // does this need to be in own fn?
 	});
 
 
