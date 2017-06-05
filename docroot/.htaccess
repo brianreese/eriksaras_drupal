@@ -116,6 +116,41 @@ DirectoryIndex index.php index.html index.htm
   RewriteCond %{REQUEST_URI} !=/favicon.ico
   RewriteRule ^ index.php [L]
 
+  # Disallow admin paths (except from edit site).
+  RewriteCond %{HTTP_HOST} !^edit
+  RewriteCond %{HTTP_HOST} !^shield-edit
+  RewriteRule ^admin($|/) %{ENV:error}
+  RewriteCond %{HTTP_HOST} !^edit
+  RewriteCond %{HTTP_HOST} !^shield-edit
+  RewriteRule ^scripts %{ENV:error}
+  RewriteCond %{HTTP_HOST} !^edit
+  RewriteCond %{HTTP_HOST} !^shield-edit
+  RewriteRule ^includes %{ENV:error}
+  RewriteCond %{HTTP_HOST} !^shield-edit
+  RewriteCond %{HTTP_HOST} !^edit
+  RewriteRule ^cron %{ENV:error}
+  RewriteCond %{HTTP_HOST} !^edit
+  RewriteCond %{HTTP_HOST} !^shield-edit
+  RewriteRule ^install\.php %{ENV:error}
+  RewriteCond %{HTTP_HOST} !^edit
+  RewriteCond %{HTTP_HOST} !^shield-edit
+  RewriteRule ^update\.php %{ENV:error}
+  RewriteCond %{HTTP_HOST} !^edit
+  RewriteCond %{HTTP_HOST} !^shield-edit
+  RewriteRule ^xmlrpc\.php %{ENV:error}
+  RewriteCond %{HTTP_HOST} !^edit
+  RewriteCond %{HTTP_HOST} !^shield-edit
+  RewriteRule ^filter($|/) %{ENV:error}
+  RewriteCond %{HTTP_HOST} !^edit
+  RewriteCond %{HTTP_HOST} !^shield-edit
+  RewriteRule ^\.gitignore %{ENV:error}
+  RewriteCond %{HTTP_HOST} !^edit
+  RewriteCond %{HTTP_HOST} !^shield-edit
+  RewriteRule ^authorize\.php %{ENV:error}
+  RewriteCond %{HTTP_HOST} !^edit
+  RewriteCond %{HTTP_HOST} !^shield-edit
+  RewriteRule ^web\.config %{ENV:error}
+
   # Rules to correctly serve gzip compressed CSS and JS files.
   # Requires both mod_rewrite and mod_headers to be enabled.
   <IfModule mod_headers.c>
