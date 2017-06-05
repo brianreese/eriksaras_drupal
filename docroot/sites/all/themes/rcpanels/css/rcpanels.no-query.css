@@ -1,11 +1,11 @@
-/* line 36, ../../../../../../../ruby/1.9.3/gems/ruby/1.9.1/gems/toolkit-1.3.8/stylesheets/toolkit/_box-sizing.scss */
+/* line 36, ../../../../../../../../../brianreese/Sites/ruby/1.9.3/gems/ruby/1.9.1/gems/toolkit-1.3.8/stylesheets/toolkit/_box-sizing.scss */
 *, *:after, *:before {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
   *behavior: url('../behaviors/box-sizing/boxsizing.php'); }
 
-/* line 4, ../../../../../../../ruby/1.9.3/gems/ruby/1.9.1/gems/toolkit-1.3.8/stylesheets/toolkit/_fluid-media.scss */
+/* line 4, ../../../../../../../../../brianreese/Sites/ruby/1.9.3/gems/ruby/1.9.1/gems/toolkit-1.3.8/stylesheets/toolkit/_fluid-media.scss */
 img, video {
   max-width: 100%;
   height: auto; }
@@ -13,6 +13,10 @@ img, video {
 /* line 1, ../sass/variables/_typography.scss */
 h1, h2, h3, h4, h5, h6 {
   color: #3b6f9e; }
+
+/* line 5, ../sass/variables/_typography.scss */
+input[type='text'] {
+  max-width: 100%; }
 
 /* No files to import found in abstractions/**\/* */
 /* line 2, ../sass/base/_forms.scss */
@@ -155,15 +159,21 @@ img, media {
       .order-review-table table.cart-review a:hover, .order-review-table table.cart-review a:focus {
         color: #0089af; }
 
-/* line 25, ../sass/rcpanels.styles.scss */
+/* line 26, ../sass/rcpanels.styles.scss */
+html,
+head,
+body {
+  height: 100%; }
+
+/* line 30, ../sass/rcpanels.styles.scss */
 body {
   font-family: 'Open Sans', sans-serif; }
 
-/* line 31, ../sass/rcpanels.styles.scss */
+/* line 36, ../sass/rcpanels.styles.scss */
 .vnav ul li {
   list-style: none; }
 
-/* line 37, ../sass/rcpanels.styles.scss */
+/* line 42, ../sass/rcpanels.styles.scss */
 input.form-submit {
   background: #3b6f9e;
   color: #fff;
@@ -171,21 +181,21 @@ input.form-submit {
   outline: none;
   margin: 5px 0px;
   box-sizing: border-box; }
-  /* line 44, ../sass/rcpanels.styles.scss */
+  /* line 49, ../sass/rcpanels.styles.scss */
   input.form-submit:hover {
     background: #427cb1; }
-  /* line 47, ../sass/rcpanels.styles.scss */
+  /* line 52, ../sass/rcpanels.styles.scss */
   input.form-submit:active {
     background: #2d5579; }
-  /* line 50, ../sass/rcpanels.styles.scss */
+  /* line 55, ../sass/rcpanels.styles.scss */
   input.form-submit + .ajax-progress {
     display: none; }
 
-/* line 56, ../sass/rcpanels.styles.scss */
+/* line 61, ../sass/rcpanels.styles.scss */
 input[type="submit"] ~ input[type="submit"] {
   margin-left: .6em; }
 
-/* line 61, ../sass/rcpanels.styles.scss */
+/* line 66, ../sass/rcpanels.styles.scss */
 #wrap {
   /* max-width: 1400px; */
   position: relative;
@@ -196,7 +206,7 @@ input[type="submit"] ~ input[type="submit"] {
   overflow: hidden;
   background: #333; }
 
-/* line 72, ../sass/rcpanels.styles.scss */
+/* line 77, ../sass/rcpanels.styles.scss */
 #panelsWrap {
   position: relative;
   top: 0;
@@ -206,25 +216,25 @@ input[type="submit"] ~ input[type="submit"] {
   margin: 0;
   width: 790px;
   left: 790px; }
-  /* line 81, ../sass/rcpanels.styles.scss */
+  /* line 86, ../sass/rcpanels.styles.scss */
   #panelsWrap #nav01 {
     position: absolute;
     z-index: 20;
     padding: 102px 0 0;
     width: 191px;
     margin-left: -191px; }
-    /* line 87, ../sass/rcpanels.styles.scss */
+    /* line 92, ../sass/rcpanels.styles.scss */
     #panelsWrap #nav01 ul {
       list-style: none;
       padding: 0;
       margin: 0; }
-      /* line 91, ../sass/rcpanels.styles.scss */
+      /* line 96, ../sass/rcpanels.styles.scss */
       #panelsWrap #nav01 ul li {
         margin: 0 0 1px; }
-        /* line 93, ../sass/rcpanels.styles.scss */
+        /* line 98, ../sass/rcpanels.styles.scss */
         #panelsWrap #nav01 ul li a, #panelsWrap #nav01 ul li a:visited {
           text-decoration: none; }
-          /* line 95, ../sass/rcpanels.styles.scss */
+          /* line 100, ../sass/rcpanels.styles.scss */
           #panelsWrap #nav01 ul li a span, #panelsWrap #nav01 ul li a:visited span {
             background: rgba(210, 210, 210, 0.9);
             width: 191px;
@@ -233,10 +243,10 @@ input[type="submit"] ~ input[type="submit"] {
             padding: 20px;
             font-size: 1.1em;
             color: #555; }
-        /* line 108, ../sass/rcpanels.styles.scss */
+        /* line 113, ../sass/rcpanels.styles.scss */
         #panelsWrap #nav01 ul li a.on span {
           color: #3b6f9e; }
-  /* line 115, ../sass/rcpanels.styles.scss */
+  /* line 120, ../sass/rcpanels.styles.scss */
   #panelsWrap #rcp_content {
     background: #fff;
     background-color: rgba(255, 255, 255, 0.97);
@@ -244,22 +254,22 @@ input[type="submit"] ~ input[type="submit"] {
     padding: 102px 0 0;
     float: left;
     overflow: hidden; }
-    /* line 122, ../sass/rcpanels.styles.scss */
+    /* line 127, ../sass/rcpanels.styles.scss */
     #panelsWrap #rcp_content #levelWrap_02 {
       float: left;
       padding: 0 14px;
       width: 352px;
       min-height: 1px; }
-      /* line 131, ../sass/rcpanels.styles.scss */
+      /* line 136, ../sass/rcpanels.styles.scss */
       #panelsWrap #rcp_content #levelWrap_02 ul {
         list-style: none;
         padding: 0;
         margin: 0; }
-      /* line 136, ../sass/rcpanels.styles.scss */
+      /* line 141, ../sass/rcpanels.styles.scss */
       #panelsWrap #rcp_content #levelWrap_02 li {
         overflow: hidden;
         margin: 0 0 1px; }
-        /* line 139, ../sass/rcpanels.styles.scss */
+        /* line 144, ../sass/rcpanels.styles.scss */
         #panelsWrap #rcp_content #levelWrap_02 li a {
           display: block;
           color: #95958f;
@@ -268,13 +278,13 @@ input[type="submit"] ~ input[type="submit"] {
           cursor: pointer;
           height: 118px;
           padding: 20px 0 0 193px; }
-          /* line 147, ../sass/rcpanels.styles.scss */
+          /* line 152, ../sass/rcpanels.styles.scss */
           #panelsWrap #rcp_content #levelWrap_02 li a.on {
             color: #3fa9f5; }
-      /* line 152, ../sass/rcpanels.styles.scss */
+      /* line 157, ../sass/rcpanels.styles.scss */
       #panelsWrap #rcp_content #levelWrap_02 .nav02 {
         display: none; }
-      /* line 155, ../sass/rcpanels.styles.scss */
+      /* line 160, ../sass/rcpanels.styles.scss */
       #panelsWrap #rcp_content #levelWrap_02 .image {
         float: left;
         display: block;
@@ -285,7 +295,7 @@ input[type="submit"] ~ input[type="submit"] {
         cursor: pointer;
         position: relative;
         margin-left: -193px; }
-      /* line 166, ../sass/rcpanels.styles.scss */
+      /* line 171, ../sass/rcpanels.styles.scss */
       #panelsWrap #rcp_content #levelWrap_02 .arrow {
         display: block;
         position: absolute;
@@ -299,7 +309,7 @@ input[type="submit"] ~ input[type="submit"] {
         background-image: url("../images/icons/level2Arrow.gif");
         background-position: 8px -25px;
         background-repeat: no-repeat; }
-  /* line 182, ../sass/rcpanels.styles.scss */
+  /* line 187, ../sass/rcpanels.styles.scss */
   #panelsWrap .level3 {
     float: left;
     width: 438px;
@@ -307,15 +317,15 @@ input[type="submit"] ~ input[type="submit"] {
     color: #575757;
     font-size: 1.083em;
     line-height: 1.385; }
-    /* line 191, ../sass/rcpanels.styles.scss */
+    /* line 196, ../sass/rcpanels.styles.scss */
     #panelsWrap .level3 .article {
       padding: 0 0 50px;
       display: none; }
-    /* line 195, ../sass/rcpanels.styles.scss */
+    /* line 200, ../sass/rcpanels.styles.scss */
     #panelsWrap .level3 p {
       margin: 0 0 1em; }
 
-/* line 202, ../sass/rcpanels.styles.scss */
+/* line 207, ../sass/rcpanels.styles.scss */
 cufon {
   display: inline !important;
   display: inline-block !important;
@@ -324,26 +334,26 @@ cufon {
   font-size: 1px !important;
   line-height: 1px !important; }
 
-/* line 219, ../sass/rcpanels.styles.scss */
+/* line 224, ../sass/rcpanels.styles.scss */
 #background {
   position: fixed;
   z-index: 0;
   width: 100%;
   height: 100%; }
-  /* line 224, ../sass/rcpanels.styles.scss */
+  /* line 229, ../sass/rcpanels.styles.scss */
   #background #bgImg {
     position: fixed;
     min-width: 1000px;
     /* max-width: 1400px; */
     width: 100%;
     height: 100%; }
-    /* line 230, ../sass/rcpanels.styles.scss */
+    /* line 235, ../sass/rcpanels.styles.scss */
     #background #bgImg .bgGroup {
       top: 0;
       left: 0;
       width: 100%;
       height: 100%; }
-      /* line 235, ../sass/rcpanels.styles.scss */
+      /* line 240, ../sass/rcpanels.styles.scss */
       #background #bgImg .bgGroup img {
         position: absolute;
         top: 0;
@@ -356,59 +366,59 @@ cufon {
 /*----------------------------------*/
 /*          Recordings              */
 /*----------------------------------*/
-/* line 254, ../sass/rcpanels.styles.scss */
+/* line 259, ../sass/rcpanels.styles.scss */
 .view.recordings {
   padding: 10px 40px 45px 40px; }
-  /* line 256, ../sass/rcpanels.styles.scss */
+  /* line 261, ../sass/rcpanels.styles.scss */
   .view.recordings .views-row a {
     background-color: #fff;
     color: #3dace0; }
-    /* line 259, ../sass/rcpanels.styles.scss */
+    /* line 264, ../sass/rcpanels.styles.scss */
     .view.recordings .views-row a:hover, .view.recordings .views-row a.sm2_playing {
       background-color: #D0E7F1;
       color: #3b6f9e; }
-    /* line 263, ../sass/rcpanels.styles.scss */
+    /* line 268, ../sass/rcpanels.styles.scss */
     .view.recordings .views-row a.sm2_paused {
       background-color: #eee; }
 
-/* line 269, ../sass/rcpanels.styles.scss */
+/* line 274, ../sass/rcpanels.styles.scss */
 #block-views-media-audio-block h2.block-title {
   padding: 30px 40px 10px 40px; }
 
 /*----------------------------------*/
 /*              Tabs                */
 /*----------------------------------*/
-/* line 278, ../sass/rcpanels.styles.scss */
+/* line 283, ../sass/rcpanels.styles.scss */
 ul.tabs--primary {
   font-size: 0.8em;
   background-image: none;
   background-color: #3fa9f5;
   border-bottom: 1px solid #eee; }
-  /* line 284, ../sass/rcpanels.styles.scss */
+  /* line 289, ../sass/rcpanels.styles.scss */
   ul.tabs--primary li {
     padding: 7px 9px;
     margin: 0px;
     font-weight: 200;
     font-size: 1.1em; }
-    /* line 289, ../sass/rcpanels.styles.scss */
+    /* line 294, ../sass/rcpanels.styles.scss */
     ul.tabs--primary li a, ul.tabs--primary li a:visited, ul.tabs--primary li a:hover {
       background: none;
       color: #fff;
       padding: 0px 6px;
       font-weight: 200; }
-  /* line 297, ../sass/rcpanels.styles.scss */
+  /* line 302, ../sass/rcpanels.styles.scss */
   ul.tabs--primary li.active {
     background-color: #0b85dc;
     background-image: none; }
-    /* line 301, ../sass/rcpanels.styles.scss */
+    /* line 306, ../sass/rcpanels.styles.scss */
     ul.tabs--primary li.active a, ul.tabs--primary li.active a:visited, ul.tabs--primary li.active a:hover {
       color: #fff;
       font-weight: bold;
       background: none; }
-    /* line 306, ../sass/rcpanels.styles.scss */
+    /* line 311, ../sass/rcpanels.styles.scss */
     ul.tabs--primary li.active:hover {
       background-color: #0a76c4; }
-  /* line 310, ../sass/rcpanels.styles.scss */
+  /* line 315, ../sass/rcpanels.styles.scss */
   ul.tabs--primary li:hover {
     background-color: #279ef4;
     background-image: none; }
@@ -416,80 +426,80 @@ ul.tabs--primary {
 /*----------------------------------*/
 /*        Scores Tab Styling        */
 /*----------------------------------*/
-/* line 324, ../sass/rcpanels.styles.scss */
+/* line 329, ../sass/rcpanels.styles.scss */
 .node .field .node--audio-recording .node__title,
 .node .field .node--audio-recording .node__links {
   display: none; }
 
-/* line 330, ../sass/rcpanels.styles.scss */
+/* line 335, ../sass/rcpanels.styles.scss */
 .views-field-field-linked-recording .node__title,
 .views-field-field-linked-recording .node__links {
   display: none; }
 
-/* line 334, ../sass/rcpanels.styles.scss */
+/* line 339, ../sass/rcpanels.styles.scss */
 .field--name-field-preview-pdf {
   color: transparent; }
-  /* line 336, ../sass/rcpanels.styles.scss */
+  /* line 341, ../sass/rcpanels.styles.scss */
   .field--name-field-preview-pdf a {
     color: transparent;
     display: none; }
 
-/* line 342, ../sass/rcpanels.styles.scss */
+/* line 347, ../sass/rcpanels.styles.scss */
 .view.view-media-scores {
   padding: 0px; }
-  /* line 345, ../sass/rcpanels.styles.scss */
+  /* line 350, ../sass/rcpanels.styles.scss */
   .view.view-media-scores .views-row {
     margin: 0px;
     padding: 10px;
     border-top: 1px dashed #bababa; }
-    /* line 349, ../sass/rcpanels.styles.scss */
+    /* line 354, ../sass/rcpanels.styles.scss */
     .view.view-media-scores .views-row .uc-price {
       text-align: right;
       width: 30px;
       display: inline-block;
       background-color: none;
       background: none; }
-    /* line 356, ../sass/rcpanels.styles.scss */
+    /* line 361, ../sass/rcpanels.styles.scss */
     .view.view-media-scores .views-row .views-field-display-price {
       font-size: 1em;
       float: left;
       margin: 0px 20px 30px 0px;
       min-width: 30px; }
-    /* line 363, ../sass/rcpanels.styles.scss */
+    /* line 368, ../sass/rcpanels.styles.scss */
     .view.view-media-scores .views-row .views-field-title {
       font-size: 1em;
       font-weight: bold;
       background: none;
       width: 55%;
       float: left; }
-      /* line 369, ../sass/rcpanels.styles.scss */
+      /* line 374, ../sass/rcpanels.styles.scss */
       .view.view-media-scores .views-row .views-field-title a {
         text-decoration: none;
         background: none;
         color: #2d5579; }
-    /* line 376, ../sass/rcpanels.styles.scss */
+    /* line 381, ../sass/rcpanels.styles.scss */
     .view.view-media-scores .views-row .views-field-field-linked-recording ul {
       list-style: none;
       padding: 0px;
       margin: 0px 0px 0px 20px; }
-      /* line 381, ../sass/rcpanels.styles.scss */
+      /* line 386, ../sass/rcpanels.styles.scss */
       .view.view-media-scores .views-row .views-field-field-linked-recording ul li a.sm2_link {
         width: 100%;
         background-color: #fafafa; }
-    /* line 388, ../sass/rcpanels.styles.scss */
+    /* line 393, ../sass/rcpanels.styles.scss */
     .view.view-media-scores .views-row .form-actions {
       text-align: right; }
-    /* line 400, ../sass/rcpanels.styles.scss */
+    /* line 405, ../sass/rcpanels.styles.scss */
     .view.view-media-scores .views-row.views-row-first {
       border-top: none; }
-    /* line 403, ../sass/rcpanels.styles.scss */
+    /* line 408, ../sass/rcpanels.styles.scss */
     .view.view-media-scores .views-row:after {
       content: '';
       clear: both;
       display: block;
       height: 1em; }
 
-/* line 415, ../sass/rcpanels.styles.scss */
+/* line 420, ../sass/rcpanels.styles.scss */
 .level4.offCanvas {
   position: absolute;
   z-index: 10;
@@ -501,14 +511,14 @@ ul.tabs--primary {
   -webkit-transition: 1s all ease;
   -moz-transition: 1s all ease;
   transition: 1s all ease; }
-  /* line 424, ../sass/rcpanels.styles.scss */
+  /* line 429, ../sass/rcpanels.styles.scss */
   .level4.offCanvas.active {
     right: 0px; }
 
 /*----------------------------------*/
 /*           Shopping Cart          */
 /*----------------------------------*/
-/* line 438, ../sass/rcpanels.styles.scss */
+/* line 443, ../sass/rcpanels.styles.scss */
 #shoppingCartButton {
   position: absolute;
   top: 0;
@@ -517,7 +527,7 @@ ul.tabs--primary {
   padding: 10px;
   text-align: right; }
 
-/* line 446, ../sass/rcpanels.styles.scss */
+/* line 451, ../sass/rcpanels.styles.scss */
 #shoppingCart {
   position: absolute;
   top: 0;
@@ -525,38 +535,38 @@ ul.tabs--primary {
   z-index: 400;
   padding-top: 20px; }
 
-/* line 453, ../sass/rcpanels.styles.scss */
+/* line 458, ../sass/rcpanels.styles.scss */
 .basket-button-count {
   display: block;
   padding: 10px 30px 20px;
   background: #fff;
   color: #3fa9f5;
   background: rgba(255, 255, 255, 0.5) url(../images/icons/shopping-cart-empty.png) center 70% no-repeat; }
-  /* line 459, ../sass/rcpanels.styles.scss */
+  /* line 464, ../sass/rcpanels.styles.scss */
   .basket-button-count.cart_full {
     background-image: url(../images/icons/shopping-cart-full.png); }
-  /* line 463, ../sass/rcpanels.styles.scss */
+  /* line 468, ../sass/rcpanels.styles.scss */
   .basket-button-count.cart_empty .cartCount {
     color: transparent;
     opacity: 0; }
-  /* line 468, ../sass/rcpanels.styles.scss */
+  /* line 473, ../sass/rcpanels.styles.scss */
   .basket-button-count .cartCount {
     position: relative;
     top: -6px;
     font-size: 13px; }
 
-/* line 474, ../sass/rcpanels.styles.scss */
+/* line 479, ../sass/rcpanels.styles.scss */
 #cartPanelLink {
   text-decoration: none;
   color: #3fa9f5; }
 
-/* line 478, ../sass/rcpanels.styles.scss */
+/* line 483, ../sass/rcpanels.styles.scss */
 #wrap {
   left: 0px;
   -webkit-transition: left 0.3s ease;
   -moz-transition: left 0.3s ease;
   transition: left 0.3s ease; }
-  /* line 481, ../sass/rcpanels.styles.scss */
+  /* line 486, ../sass/rcpanels.styles.scss */
   #wrap #cartFadeOut {
     position: absolute;
     background: rgba(0, 0, 0, 0);
@@ -566,19 +576,19 @@ ul.tabs--primary {
     -webkit-transition: background 0.3s ease;
     -moz-transition: background 0.3s ease;
     transition: background 0.3s ease; }
-  /* line 491, ../sass/rcpanels.styles.scss */
+  /* line 496, ../sass/rcpanels.styles.scss */
   #wrap #nav01 {
     -webkit-transition: margin-left 0.3s ease;
     -moz-transition: margin-left 0.3s ease;
     transition: margin-left 0.3s ease; }
 
-/* line 495, ../sass/rcpanels.styles.scss */
+/* line 500, ../sass/rcpanels.styles.scss */
 #wrap.cartView {
   left: -300px;
   -webkit-transition: left 0.3s ease;
   -moz-transition: left 0.3s ease;
   transition: left 0.3s ease; }
-  /* line 498, ../sass/rcpanels.styles.scss */
+  /* line 503, ../sass/rcpanels.styles.scss */
   #wrap.cartView #cartFadeOut {
     background: rgba(0, 0, 0, 0.5);
     width: 100%;
@@ -586,28 +596,28 @@ ul.tabs--primary {
     -webkit-transition: background 0.3s ease;
     -moz-transition: background 0.3s ease;
     transition: background 0.3s ease; }
-  /* line 505, ../sass/rcpanels.styles.scss */
+  /* line 510, ../sass/rcpanels.styles.scss */
   #wrap.cartView #nav01 {
     left: 0px;
     pointer-events: none;
     -webkit-transition: margin-left 0.3s ease;
     -moz-transition: margin-left 0.3s ease;
     transition: margin-left 0.3s ease; }
-  /* line 513, ../sass/rcpanels.styles.scss */
+  /* line 518, ../sass/rcpanels.styles.scss */
   #wrap.cartView #levelWrap_01,
   #wrap.cartView #rcp_content {
     pointer-events: none; }
-  /* line 516, ../sass/rcpanels.styles.scss */
+  /* line 521, ../sass/rcpanels.styles.scss */
   #wrap.cartView .basket-button-count {
     background-color: #fff;
     -webkit-transition: background-color 0.3s ease;
     -moz-transition: background-color 0.3s ease;
     transition: background-color 0.3s ease; }
-  /* line 521, ../sass/rcpanels.styles.scss */
+  /* line 526, ../sass/rcpanels.styles.scss */
   #wrap.cartView.level2open #nav01 {
     margin-left: -491px; }
 
-/* line 527, ../sass/rcpanels.styles.scss */
+/* line 532, ../sass/rcpanels.styles.scss */
 .cartSummary {
   position: absolute;
   overflow: hidden;
@@ -619,7 +629,7 @@ ul.tabs--primary {
   background: #fff;
   padding: 20px 10px;
   padding-top: 30px; }
-  /* line 540, ../sass/rcpanels.styles.scss */
+  /* line 545, ../sass/rcpanels.styles.scss */
   .cartSummary input[value=Remove] {
     color: transparent;
     background-color: #000;
@@ -631,27 +641,27 @@ ul.tabs--primary {
     overflow: hidden;
     background: url(../images/icons/icon-close.png) left top no-repeat;
     background-size: contain; }
-    /* line 551, ../sass/rcpanels.styles.scss */
+    /* line 556, ../sass/rcpanels.styles.scss */
     .cartSummary input[value=Remove]:before {
       content: 'X';
       position: absolute;
       color: #000; }
-  /* line 558, ../sass/rcpanels.styles.scss */
+  /* line 563, ../sass/rcpanels.styles.scss */
   .cartSummary table th {
     display: none; }
-  /* line 561, ../sass/rcpanels.styles.scss */
+  /* line 566, ../sass/rcpanels.styles.scss */
   .cartSummary table tr {
     background: none; }
-    /* line 563, ../sass/rcpanels.styles.scss */
+    /* line 568, ../sass/rcpanels.styles.scss */
     .cartSummary table tr td {
       padding: 5px 2px;
       vertical-align: bottom; }
-      /* line 566, ../sass/rcpanels.styles.scss */
+      /* line 571, ../sass/rcpanels.styles.scss */
       .cartSummary table tr td a {
         text-decoration: none;
         pointer-events: none;
         color: #333; }
-  /* line 576, ../sass/rcpanels.styles.scss */
+  /* line 581, ../sass/rcpanels.styles.scss */
   .cartSummary #uc-cart-view-form #edit-actions input.form-submit {
     background: #3b6f9e;
     color: #fff;
@@ -662,18 +672,18 @@ ul.tabs--primary {
     margin: 5px 0px;
     box-sizing: border-box;
     float: none; }
-  /* line 587, ../sass/rcpanels.styles.scss */
+  /* line 592, ../sass/rcpanels.styles.scss */
   .cartSummary #uc-cart-view-form #edit-actions .uc-cart-checkout-button-container {
     text-align: center; }
-    /* line 589, ../sass/rcpanels.styles.scss */
+    /* line 594, ../sass/rcpanels.styles.scss */
     .cartSummary #uc-cart-view-form #edit-actions .uc-cart-checkout-button-container .uc-cart-checkout-button {
       float: none;
       padding: 20px; }
 
-/* line 597, ../sass/rcpanels.styles.scss */
+/* line 602, ../sass/rcpanels.styles.scss */
 #shoppingCart .block__title {
   display: none; }
-/* line 600, ../sass/rcpanels.styles.scss */
+/* line 605, ../sass/rcpanels.styles.scss */
 #shoppingCart ul.menu {
   position: absolute;
   right: 100%;
@@ -684,93 +694,93 @@ ul.tabs--primary {
   padding: 20px 20px 10px 10px;
   background: rgba(255, 255, 255, 0.5);
   font-size: .9em; }
-  /* line 610, ../sass/rcpanels.styles.scss */
+  /* line 615, ../sass/rcpanels.styles.scss */
   #shoppingCart ul.menu li {
     list-style: none;
     display: inline-block;
     text-align: right; }
-    /* line 614, ../sass/rcpanels.styles.scss */
+    /* line 619, ../sass/rcpanels.styles.scss */
     #shoppingCart ul.menu li a {
       color: #3b6f9e;
       text-decoration: none; }
-    /* line 618, ../sass/rcpanels.styles.scss */
+    /* line 623, ../sass/rcpanels.styles.scss */
     #shoppingCart ul.menu li:last-child {
       display: none; }
 
-/* line 625, ../sass/rcpanels.styles.scss */
+/* line 630, ../sass/rcpanels.styles.scss */
 .logged-in #shoppingCart ul.menu {
   width: 120px; }
-  /* line 627, ../sass/rcpanels.styles.scss */
+  /* line 632, ../sass/rcpanels.styles.scss */
   .logged-in #shoppingCart ul.menu li:first-child, .logged-in #shoppingCart ul.menu li:last-child {
     display: none; }
 
-/* line 634, ../sass/rcpanels.styles.scss */
+/* line 639, ../sass/rcpanels.styles.scss */
 #panelsWrap .messages {
   position: fixed;
   bottom: 10px;
   right: 10px; }
 
-/* line 640, ../sass/rcpanels.styles.scss */
+/* line 645, ../sass/rcpanels.styles.scss */
 iframe.pdf {
   width: 100%; }
 
-/* line 644, ../sass/rcpanels.styles.scss */
+/* line 649, ../sass/rcpanels.styles.scss */
 iframe.cboxIframe html, iframe.cboxIframe body, iframe.cboxIframe iframe, iframe.cboxIframe div {
   height: 100%; }
 
-/* line 649, ../sass/rcpanels.styles.scss */
+/* line 654, ../sass/rcpanels.styles.scss */
 .cart-empty-wrap {
   margin: 0px auto;
   padding: 20px 15px;
   width: 100%;
   max-width: 600px; }
-  /* line 654, ../sass/rcpanels.styles.scss */
+  /* line 659, ../sass/rcpanels.styles.scss */
   .cart-empty-wrap .uc-cart-empty {
     width: 100%; }
-  /* line 659, ../sass/rcpanels.styles.scss */
+  /* line 664, ../sass/rcpanels.styles.scss */
   .cart-empty-wrap .form-submit {
     width: 100%;
     max-width: 300px; }
 
-/* line 668, ../sass/rcpanels.styles.scss */
+/* line 673, ../sass/rcpanels.styles.scss */
 .admin-view table {
   background-color: rgba(0, 0, 0, 0.08);
   width: 100%;
   margin-bottom: 50px; }
-  /* line 672, ../sass/rcpanels.styles.scss */
+  /* line 677, ../sass/rcpanels.styles.scss */
   .admin-view table tr, .admin-view table th, .admin-view table td {
     background: transparent; }
-  /* line 676, ../sass/rcpanels.styles.scss */
+  /* line 681, ../sass/rcpanels.styles.scss */
   .admin-view table th, .admin-view table td {
     padding: 4px 10px; }
-  /* line 679, ../sass/rcpanels.styles.scss */
+  /* line 684, ../sass/rcpanels.styles.scss */
   .admin-view table th {
     background-color: #3b6f9e;
     color: #ddd; }
-    /* line 682, ../sass/rcpanels.styles.scss */
+    /* line 687, ../sass/rcpanels.styles.scss */
     .admin-view table th a, .admin-view table th a:visited {
       color: #fff; }
-    /* line 685, ../sass/rcpanels.styles.scss */
+    /* line 690, ../sass/rcpanels.styles.scss */
     .admin-view table th.active {
       background-color: #2d5579; }
-  /* line 689, ../sass/rcpanels.styles.scss */
+  /* line 694, ../sass/rcpanels.styles.scss */
   .admin-view table .views-field-field-gallery-photo {
     width: 50px; }
-  /* line 692, ../sass/rcpanels.styles.scss */
+  /* line 697, ../sass/rcpanels.styles.scss */
   .admin-view table tr:hover {
     background-color: rgba(0, 0, 0, 0.08); }
-/* line 697, ../sass/rcpanels.styles.scss */
+/* line 702, ../sass/rcpanels.styles.scss */
 .admin-view h2.block__title {
   float: left; }
-/* line 700, ../sass/rcpanels.styles.scss */
+/* line 705, ../sass/rcpanels.styles.scss */
 .admin-view .view-header {
   float: left;
   padding: 10px 20px; }
-/* line 704, ../sass/rcpanels.styles.scss */
+/* line 709, ../sass/rcpanels.styles.scss */
 .admin-view .views-exposed-form {
   clear: both; }
 
-/* line 711, ../sass/rcpanels.styles.scss */
+/* line 716, ../sass/rcpanels.styles.scss */
 .block--views-admin-panel-block h2.block__title,
 .block--views-admin-panel-block-1 h2.block__title,
 .block--views-admin-panel-block-2 h2.block__title,
@@ -779,15 +789,6 @@ iframe.cboxIframe html, iframe.cboxIframe body, iframe.cboxIframe iframe, iframe
 
 /* Animation */
 @-moz-keyframes loadingAnimation {
-  /* line 724, ../sass/rcpanels.styles.scss */
-  from {
-    opacity: 0.8; }
-
-  /* line 725, ../sass/rcpanels.styles.scss */
-  to {
-    opacity: 0.2; } }
-
-@-webkit-keyframes loadingAnimation {
   /* line 729, ../sass/rcpanels.styles.scss */
   from {
     opacity: 0.8; }
@@ -796,7 +797,7 @@ iframe.cboxIframe html, iframe.cboxIframe body, iframe.cboxIframe iframe, iframe
   to {
     opacity: 0.2; } }
 
-@-o-keyframes loadingAnimation {
+@-webkit-keyframes loadingAnimation {
   /* line 734, ../sass/rcpanels.styles.scss */
   from {
     opacity: 0.8; }
@@ -805,7 +806,7 @@ iframe.cboxIframe html, iframe.cboxIframe body, iframe.cboxIframe iframe, iframe
   to {
     opacity: 0.2; } }
 
-@-ms-keyframes loadingAnimation {
+@-o-keyframes loadingAnimation {
   /* line 739, ../sass/rcpanels.styles.scss */
   from {
     opacity: 0.8; }
@@ -814,7 +815,7 @@ iframe.cboxIframe html, iframe.cboxIframe body, iframe.cboxIframe iframe, iframe
   to {
     opacity: 0.2; } }
 
-@-khtml-keyframes loadingAnimation {
+@-ms-keyframes loadingAnimation {
   /* line 744, ../sass/rcpanels.styles.scss */
   from {
     opacity: 0.8; }
@@ -823,7 +824,7 @@ iframe.cboxIframe html, iframe.cboxIframe body, iframe.cboxIframe iframe, iframe
   to {
     opacity: 0.2; } }
 
-@keyframes loadingAnimation {
+@-khtml-keyframes loadingAnimation {
   /* line 749, ../sass/rcpanels.styles.scss */
   from {
     opacity: 0.8; }
@@ -832,8 +833,17 @@ iframe.cboxIframe html, iframe.cboxIframe body, iframe.cboxIframe iframe, iframe
   to {
     opacity: 0.2; } }
 
+@keyframes loadingAnimation {
+  /* line 754, ../sass/rcpanels.styles.scss */
+  from {
+    opacity: 0.8; }
+
+  /* line 755, ../sass/rcpanels.styles.scss */
+  to {
+    opacity: 0.2; } }
+
 /* The container */
-/* line 754, ../sass/rcpanels.styles.scss */
+/* line 759, ../sass/rcpanels.styles.scss */
 #loading {
   height: 30px;
   width: 100px;
@@ -845,25 +855,25 @@ iframe.cboxIframe html, iframe.cboxIframe body, iframe.cboxIframe iframe, iframe
   margin-top: -15px;
   display: block; }
 
-/* line 768, ../sass/rcpanels.styles.scss */
+/* line 773, ../sass/rcpanels.styles.scss */
 .ui-loading {
   width: 100%;
   height: 50px;
   text-align: center;
   margin-top: 15px; }
 
-/* line 772, ../sass/rcpanels.styles.scss */
+/* line 777, ../sass/rcpanels.styles.scss */
 .ui-loading ul, .ui-loading li {
   list-style-type: none;
   list-type: none;
   margin: 0px;
   padding: 0px; }
 
-/* line 776, ../sass/rcpanels.styles.scss */
+/* line 781, ../sass/rcpanels.styles.scss */
 .ui-loading ul {
   display: inline-block; }
 
-/* line 777, ../sass/rcpanels.styles.scss */
+/* line 782, ../sass/rcpanels.styles.scss */
 .ui-loading li {
   float: left;
   display: inline;
@@ -877,47 +887,47 @@ iframe.cboxIframe html, iframe.cboxIframe body, iframe.cboxIframe iframe, iframe
   -moz-animation: loadingAnimation 1.5s infinite;
   animation: loadingAnimation 1.5s infinite; }
 
-/* line 792, ../sass/rcpanels.styles.scss */
+/* line 797, ../sass/rcpanels.styles.scss */
 .ui-loading li:nth-child(1) {
   -webkit-animation-delay: 0s;
   -moz-animation-delay: 0s;
   animation-delay: 0s; }
 
-/* line 797, ../sass/rcpanels.styles.scss */
+/* line 802, ../sass/rcpanels.styles.scss */
 .ui-loading li:nth-child(2) {
   -webkit-animation-delay: 500ms;
   -moz-animation-delay: 500ms;
   animation-delay: 500ms; }
 
-/* line 802, ../sass/rcpanels.styles.scss */
+/* line 807, ../sass/rcpanels.styles.scss */
 .ui-loading li:nth-child(3) {
   -webkit-animation-delay: 1000ms;
   -moz-animation-delay: 1000ms;
   animation-delay: 1000ms; }
 
-/* line 808, ../sass/rcpanels.styles.scss */
+/* line 813, ../sass/rcpanels.styles.scss */
 #cartPreviewAjax span.loadingMessage {
   display: block;
   width: 100%;
   text-align: center;
   margin-top: 120px; }
-/* line 814, ../sass/rcpanels.styles.scss */
+/* line 819, ../sass/rcpanels.styles.scss */
 #cartPreviewAjax #loading {
   top: 200px; }
 
-/* line 822, ../sass/rcpanels.styles.scss */
+/* line 827, ../sass/rcpanels.styles.scss */
 div#admin-menu {
   background: rgba(0, 0, 0, 0.2); }
 
-/* line 826, ../sass/rcpanels.styles.scss */
+/* line 831, ../sass/rcpanels.styles.scss */
 #admin-menu .dropdown a, #admin-menu .dropdown li > span {
   border: none; }
 
-/* line 833, ../sass/rcpanels.styles.scss */
+/* line 838, ../sass/rcpanels.styles.scss */
 #panelsWrap #nav01 ul li.mobileNav a span {
   padding-left: 20px;
   padding-top: 15px; }
-  /* line 836, ../sass/rcpanels.styles.scss */
+  /* line 841, ../sass/rcpanels.styles.scss */
   #panelsWrap #nav01 ul li.mobileNav a span:before {
     content: ' ';
     background: url(../images/icons/icon-menu.png) top left no-repeat;
@@ -929,28 +939,28 @@ div#admin-menu {
     margin-top: 2px;
     float: left; }
 
-/* line 853, ../sass/rcpanels.styles.scss */
+/* line 858, ../sass/rcpanels.styles.scss */
 .cart-disabled .add-to-cart,
 .cart-disabled .display-price {
   display: none; }
 
 /* --------- Temporary ----------- */
-/* line 859, ../sass/rcpanels.styles.scss */
+/* line 864, ../sass/rcpanels.styles.scss */
 .l-branding {
   position: fixed;
   z-index: 100;
   top: 80px;
   max-width: 220px; }
 
-/* line 865, ../sass/rcpanels.styles.scss */
+/* line 870, ../sass/rcpanels.styles.scss */
 .messages--error {
   display: none; }
 
-/* line 868, ../sass/rcpanels.styles.scss */
+/* line 873, ../sass/rcpanels.styles.scss */
 .messages--warning {
   display: none; }
 
-/* line 873, ../sass/rcpanels.styles.scss */
+/* line 878, ../sass/rcpanels.styles.scss */
 .nav02-description {
   width: 125%;
   margin-top: -40px;
@@ -960,7 +970,7 @@ div#admin-menu {
   -moz-transition: 0.4s all ease;
   transition: 0.4s all ease; }
 
-/* line 884, ../sass/rcpanels.styles.scss */
+/* line 889, ../sass/rcpanels.styles.scss */
 .level3 .nav02-description {
   opacity: 0;
   margin-left: -400%;
